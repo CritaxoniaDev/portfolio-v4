@@ -1,0 +1,164 @@
+---
+// Define navigation items with icon names
+const navItems = [
+  { name: 'Home', url: '/', icon: 'home' },
+  { name: 'About Me', url: '#about', icon: 'user' },
+  { name: 'Education', url: '#education', icon: 'graduation-cap' },
+  { name: 'Skills', url: '#skills', icon: 'cog' },
+  { name: 'Projects', url: '#projects', icon: 'code-branch' },
+  { name: 'Experience', url: '#experience', icon: 'briefcase' },
+  { name: 'Contact', url: '#contact', icon: 'envelope' }
+];
+
+// Get current path to highlight active link
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed w-full z-50 py-5">
+  <div class="container mx-auto px-6">
+    <!-- Frosted glass effect background -->
+    <div class="absolute inset-0 bg-white/70 backdrop-blur-md shadow-sm"></div>
+    
+    <div class="relative flex items-center justify-between">
+      <!-- Logo/Name with subtle animation -->
+      <a 
+        href="/" 
+        class="text-xl font-light tracking-wide text-gray-900 hover:text-blue-600 transition-colors duration-300"
+      >
+        <span class="font-semibold">G</span>ian Raphael
+      </a>
+      
+      <!-- Desktop Navigation - Minimal horizontal line design -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-8">
+          {navItems.map((item) => {
+            const isActive = currentPath === item.url || 
+                            (item.url !== "/" && currentPath.startsWith(item.url));
+            return (
+              <li>
+                <a 
+                  href={item.url} 
+                  class={`relative py-2 text-sm uppercase tracking-wider font-light transition-colors duration-300 flex items-center gap-1.5
+                    ${isActive ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'}`}
+                >
+                  <i class={`fas fa-${item.icon} text-xs`}></i>
+                  {item.name}
+                  <span class={`absolute left-0 right-0 bottom-0 h-px bg-blue-600 transform origin-left transition-transform duration-300 ease-out
+                    ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+      
+      <!-- Minimal Mobile Menu Button -->
+      <button 
+        id="mobile-menu-button" 
+        class="md:hidden w-8 h-8 flex items-center justify-center text-gray-600 focus:outline-none"
+        aria-label="Toggle menu"
+      >
+        <div class="relative w-5 h-5">
+          <span id="line-1" class="absolute top-0 left-0 w-full h-0.5 bg-gray-600 transform transition-all duration-300"></span>
+          <span id="line-2" class="absolute top-2 left-0 w-full h-0.5 bg-gray-600 transform transition-all duration-300"></span>
+          <span id="line-3" class="absolute top-4 left-0 w-full h-0.5 bg-gray-600 transform transition-all duration-300"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Minimal Mobile Navigation Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-lg z-50 flex items-center justify-center transform translate-y-full transition-transform duration-500 ease-in-out">
+    <nav class="text-center">
+      <ul class="flex flex-col space-y-6">
+        {navItems.map((item) => (
+          <li>
+            <a 
+              href={item.url} 
+              class="text-xl font-light text-gray-800 hover:text-blue-600 transition-colors duration-300 flex items-center justify-center gap-2"
+              data-mobile-link
+            >
+              <i class={`fas fa-${item.icon}`}></i>
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const line1 = document.getElementById('line-1');
+    const line2 = document.getElementById('line-2');
+    const line3 = document.getElementById('line-3');
+    const mobileLinks = document.querySelectorAll('[data-mobile-link]');
+    
+    let isOpen = false;
+    
+    if (mobileMenuButton && mobileMenu && line1 && line2 && line3) {
+      // Toggle menu function with animation
+      const toggleMenu = () => {
+        isOpen = !isOpen;
+        
+        // Animate the menu overlay
+        mobileMenu.style.transform = isOpen ? 'translateY(0)' : 'translateY(100%)';
+        
+        // Animate the hamburger to X
+        if (isOpen) {
+          line1.classList.add('rotate-45', 'top-2');
+          line2.classList.add('opacity-0');
+          line3.classList.add('-rotate-45', 'top-2');
+        } else {
+          line1.classList.remove('rotate-45', 'top-2');
+          line2.classList.remove('opacity-0');
+          line3.classList.remove('-rotate-45', 'top-2');
+        }
+      };
+      
+      // Toggle on button click
+      mobileMenuButton.addEventListener('click', toggleMenu);
+      
+      // Close menu when a link is clicked
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (isOpen) toggleMenu();
+        });
+      });
+      
+      // Close menu on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isOpen) toggleMenu();
+      });
+    }
+    
+    // Header scroll effect
+    const header = document.querySelector('header');
+    if (header) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('py-3', 'shadow-md');
+          header.classList.remove('py-5');
+        } else {
+          header.classList.add('py-5');
+          header.classList.remove('py-3', 'shadow-md');
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  /* Smooth transition for header height change */
+  header {
+    transition: padding 0.3s ease;
+  }
+  
+  /* Animation for hamburger menu */
+  #line-1, #line-2, #line-3 {
+    transform-origin: center;
+  }
+</style>
