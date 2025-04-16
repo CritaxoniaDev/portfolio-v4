@@ -5,176 +5,200 @@ import profileImage from "../assets/profile.jpg"; // Update this path to your ac
 
 <!-- Card wrapper with corner squares and more vertical space -->
 <div class="pt-25 pb-42 bg-white flex items-center justify-center">
-  <div class="container mx-auto px-6">
-    <!-- Card container with border - increased vertical padding -->
-    <div class="relative border-2 border-gray-200 rounded-lg py-16 bg-white/90">
+	<div class="container mx-auto px-6">
+		<!-- Card container with border - increased vertical padding -->
+		<div
+			class="relative border-2 border-gray-200 rounded-lg py-16 bg-white/90"
+		>
+			<!-- Corner squares with outline instead of solid fill -->
+			<div
+				class="absolute -top-2 -left-2 w-4 h-4 border-2 border-blue-500 bg-white rounded-sm"
+			>
+			</div>
+			<div
+				class="absolute -top-2 -right-2 w-4 h-4 border-2 border-blue-500 bg-white rounded-sm"
+			>
+			</div>
+			<div
+				class="absolute -bottom-2 -left-2 w-4 h-4 border-2 border-blue-500 bg-white rounded-sm"
+			>
+			</div>
+			<div
+				class="absolute -bottom-2 -right-2 w-4 h-4 border-2 border-blue-500 bg-white rounded-sm"
+			>
+			</div>
 
-      <!-- Corner squares with outline instead of solid fill -->
-	<div class="absolute -top-2 -left-2 w-4 h-4 border-2 border-blue-500 bg-white rounded-sm"></div>
-	<div class="absolute -top-2 -right-2 w-4 h-4 border-2 border-blue-500 bg-white rounded-sm"></div>
-	<div class="absolute -bottom-2 -left-2 w-4 h-4 border-2 border-blue-500 bg-white rounded-sm"></div>
-	<div class="absolute -bottom-2 -right-2 w-4 h-4 border-2 border-blue-500 bg-white rounded-sm"></div>
-   
-      <!-- Content -->
-      <div class="flex flex-col md:flex-row items-center justify-between gap-12">
-        <!-- Image Section (Left) -->
-        <div class="w-full md:w-5/12 flex justify-center md:justify-end">
-          <div class="relative">
-            <!-- Main image with enhanced 3D effect -->
-            <div class="relative z-10 transform transition-transform duration-500 hover:rotate-1 hover:-translate-y-2">
-              <img
-                src={profileImage.src || "https://via.placeholder.com/400x500"}
-                alt="Gian Raphael Alcantara"
-                class="w-64 h-80 object-cover rounded-lg shadow-xl relative"
-                style="box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.05) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;"
-              />
-              <!-- Inner border glow effect -->
-              <div
-                class="absolute inset-0 rounded-lg border-2 border-blue-400 opacity-75 shadow-[0_0_15px_rgba(59,130,246,0.5)] animate-pulse"
-              >
-              </div>
-            </div>
-            <!-- Layered decorative elements for 3D effect -->
-            <div
-              class="absolute -bottom-4 -right-4 w-64 h-80 border-2 border-blue-500 rounded-lg z-0 bg-gradient-to-br from-blue-50 to-transparent"
-            >
-            </div>
-            <div
-              class="absolute -bottom-7 -right-7 w-64 h-80 border border-blue-300 rounded-lg opacity-50"
-            >
-            </div>
-            <!-- Corner accent -->
-            <div
-              class="absolute -bottom-3 -right-3 w-12 h-12 bg-blue-500 rounded-br-lg rounded-tl-lg z-0 transform rotate-12 opacity-80"
-            >
-            </div>
-            <!-- Subtle floating dots for dimension -->
-            <div
-              class="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-blue-100 opacity-70"
-            >
-            </div>
-            <div
-              class="absolute top-20 -left-6 w-4 h-4 rounded-full bg-blue-300 opacity-50"
-            >
-            </div>
-          </div>
-        </div>
+			<!-- Content -->
+			<div
+				class="flex flex-col md:flex-row items-center justify-between gap-12"
+			>
+				<!-- Image Section (Left) -->
+				<div
+					class="w-full md:w-5/12 flex justify-center md:justify-end"
+				>
+					<div class="relative">
+						<!-- Main image with enhanced 3D effect -->
+						<div
+							class="relative z-10 transform transition-transform duration-500 hover:rotate-1 hover:-translate-y-2"
+						>
+							<img
+								src={profileImage.src ||
+									"https://via.placeholder.com/400x500"}
+								alt="Gian Raphael Alcantara"
+								class="w-64 h-80 object-cover rounded-lg shadow-xl relative"
+								style="box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.05) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;"
+							/>
+							<!-- Inner border glow effect -->
+							<div
+								class="absolute inset-0 rounded-lg border-2 border-blue-400 opacity-75 shadow-[0_0_15px_rgba(59,130,246,0.5)] animate-pulse"
+							>
+							</div>
+						</div>
+						<!-- Layered decorative elements for 3D effect -->
+						<div
+							class="absolute -bottom-4 -right-4 w-64 h-80 border-2 border-blue-500 rounded-lg z-0 bg-gradient-to-br from-blue-50 to-transparent"
+						>
+						</div>
+						<div
+							class="absolute -bottom-7 -right-7 w-64 h-80 border border-blue-300 rounded-lg opacity-50"
+						>
+						</div>
+						<!-- Corner accent -->
+						<div
+							class="absolute -bottom-3 -right-3 w-12 h-12 bg-blue-500 rounded-br-lg rounded-tl-lg z-0 transform rotate-12 opacity-80"
+						>
+						</div>
+						<!-- Subtle floating dots for dimension -->
+						<div
+							class="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-blue-100 opacity-70"
+						>
+						</div>
+						<div
+							class="absolute top-20 -left-6 w-4 h-4 rounded-full bg-blue-300 opacity-50"
+						>
+						</div>
+					</div>
+				</div>
 
-        <!-- Content Section (Right) -->
-        <div class="w-full md:w-7/12 text-left">
-          <h2 class="text-lg font-medium text-blue-600 mb-2">
-            Hello, I'm
-          </h2>
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-            Gian Raphael Alcantara
-          </h1>
-          <div class="h-8 mb-2">
-            <!-- Fixed height container to prevent layout shift -->
-            <h3
-              class="text-xl text-gray-700 typewriter-text"
-              id="typewriter"
-            >
-            </h3>
-          </div>
+				<!-- Content Section (Right) -->
+				<div class="w-full md:w-7/12 text-left">
+					<h2 class="text-lg font-medium text-blue-600 mb-2">
+						Hello, I'm
+					</h2>
+					<h1
+						class="text-4xl md:text-5xl font-bold text-gray-900 mb-3"
+					>
+						Gian Raphael Alcantara
+					</h1>
+					<div class="h-8 mb-2">
+						<!-- Fixed height container to prevent layout shift -->
+						<h3
+							class="text-xl text-gray-700 typewriter-text"
+							id="typewriter"
+						>
+						</h3>
+					</div>
 
-          <div class="h-px w-20 bg-gray-300 mb-6"></div>
+					<div class="h-px w-20 bg-gray-300 mb-6"></div>
 
-          <p class="text-gray-600 mb-8 max-w-lg">
-            Passionate about creating elegant solutions through code and
-            design. I focus on building clean, user-friendly experiences
-            that solve real problems.
-          </p>
+					<p class="text-gray-600 mb-8 max-w-lg">
+						Passionate about creating elegant solutions through code
+						and design. I focus on building clean, user-friendly
+						experiences that solve real problems.
+					</p>
 
-          <div class="flex gap-4">
-            <a
-              href="#portfolio"
-              class="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-            >
-              View My Work
-            </a>
-            <a
-              href="#contact"
-              class="px-6 py-3 text-gray-700 hover:text-blue-600 transition-colors flex items-center"
-            >
-              Contact Me
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 ml-1"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+					<div class="flex gap-6">
+						<a
+							href="#portfolio"
+							class="px-6 py-3 bg-transparent border-b-2 border-blue-500 text-gray-800 hover:bg-blue-50 transition-all duration-300 font-medium"
+						>
+							View My Work
+						</a>
+						<a
+							href="#contact"
+							class="px-6 py-3 bg-transparent border-b-2 border-gray-300 text-gray-700 hover:border-blue-500 hover:text-blue-600 transition-all duration-300 flex items-center font-medium group"
+						>
+							Contact Me
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="h-4 w-4 ml-2 transform transition-transform duration-300 group-hover:translate-x-1"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+									clip-rule="evenodd"></path>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const typewriterElement = document.getElementById("typewriter");
-    // Check if the element exists before proceeding
-    if (!typewriterElement) return;
+	document.addEventListener("DOMContentLoaded", function () {
+		const typewriterElement = document.getElementById("typewriter");
+		// Check if the element exists before proceeding
+		if (!typewriterElement) return;
 
-    const roles = [
-      "Software Engineering Student",
-      "Front-End Developer",
-      "Back-End Developer",
-      "UI/UX Enthusiast",
-      "Web Developer",
-    ];
+		const roles = [
+			"Software Engineering Student",
+			"Front-End Developer",
+			"Back-End Developer",
+			"UI/UX Enthusiast",
+			"Web Developer",
+		];
 
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 100; // Base typing speed in ms
+		let roleIndex = 0;
+		let charIndex = 0;
+		let isDeleting = false;
+		let typingSpeed = 100; // Base typing speed in ms
 
-    function typeWriter() {
-      const currentRole = roles[roleIndex];
+		function typeWriter() {
+			const currentRole = roles[roleIndex];
 
-      if (isDeleting) {
-        // Deleting text
-        typewriterElement.textContent = currentRole.substring(
-          0,
-          charIndex - 1,
-        );
-        charIndex--;
-        typingSpeed = 50; // Faster when deleting
-      } else {
-        // Typing text
-        typewriterElement.textContent = currentRole.substring(
-          0,
-          charIndex + 1,
-        );
-        charIndex++;
-        typingSpeed = 100; // Normal speed when typing
-      }
+			if (isDeleting) {
+				// Deleting text
+				if (typewriterElement) {
+					typewriterElement.textContent = currentRole.substring(
+						0,
+						charIndex - 1,
+					);
+				}
+				charIndex--;
+				typingSpeed = 50; // Faster when deleting
+			} else {
+				// Typing text
+				if (typewriterElement) {
+					typewriterElement.textContent = currentRole.substring(
+						0,
+						charIndex + 1,
+					);
+				}
+				charIndex++;
+				typingSpeed = 100; // Normal speed when typing
+			}
 
-      // If finished typing the current role
-      if (!isDeleting && charIndex === currentRole.length) {
-        isDeleting = true;
-        typingSpeed = 1500; // Pause at the end of typing
-      }
-      // If finished deleting the current role
-      else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length; // Move to next role
-        typingSpeed = 500; // Pause before typing next role
-      }
+			// If finished typing the current role
+			if (!isDeleting && charIndex === currentRole.length) {
+				isDeleting = true;
+				typingSpeed = 1500; // Pause at the end of typing
+			}
+			// If finished deleting the current role
+			else if (isDeleting && charIndex === 0) {
+				isDeleting = false;
+				roleIndex = (roleIndex + 1) % roles.length; // Move to next role
+				typingSpeed = 500; // Pause before typing next role
+			}
 
-      // Continue the animation
-      setTimeout(typeWriter, typingSpeed);
-    }
+			// Continue the animation
+			setTimeout(typeWriter, typingSpeed);
+		}
 
-    // Start the typewriter effect
-    typeWriter();
-  });
+		// Start the typewriter effect
+		typeWriter();
+	});
 </script>
-
