@@ -16,59 +16,118 @@ import educlaasLogo from '../assets/res/educlaas-logo.png';
       
       <!-- Minimalist Timeline -->
       <div class="relative">
-        <!-- Timeline connector line -->
-        <div class="hidden md:block absolute top-0 left-16 bottom-0 w-px bg-gray-200"></div>
+        <!-- Timeline connector line with gradient -->
+        <div class="hidden md:block absolute top-0 left-16 bottom-0 w-px bg-gradient-to-b from-blue-200 via-blue-300 to-transparent"></div>
         
         <!-- Experience Item -->
         <div class="relative mb-12">
-          <!-- Timeline dot -->
-          <div class="hidden md:block absolute top-8 left-16 w-3 h-3 rounded-full bg-blue-500 transform -translate-x-1/2"></div>
+          <!-- Timeline dot with improved styling -->
+          <div class="hidden md:block absolute top-8 left-16 w-4 h-4 rounded-full border-2 border-blue-400 bg-white transform -translate-x-1/2 z-10"></div>
           
           <div class="flex flex-col md:flex-row gap-8">
-            <!-- Left side: Logo and period -->
+            <!-- Left side: Logo and period with 3D effect styling from Welcome component -->
             <div class="md:w-32 flex flex-col items-center md:items-end">
-              <div class="w-16 h-16 bg-white border border-gray-200 rounded-lg p-2 flex items-center justify-center shadow-sm">
-                <img 
-                  src={educlaasLogo.src}
-                  alt="Lithan EduClaaS"
-                  class="max-w-full max-h-full object-contain"
-                />
+              <!-- Logo container with 3D effect -->
+              <div class="relative">
+                <!-- Main logo with enhanced 3D effect -->
+                <div class="relative z-10 transform transition-transform duration-500 hover:rotate-1 hover:-translate-y-2">
+                  <div class="w-20 h-20 bg-white rounded-lg shadow-xl relative flex items-center justify-center p-2"
+                       style="box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.05) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;">
+                    <img 
+                      src={educlaasLogo.src}
+                      alt="Lithan EduClaaS"
+                      class="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                  <!-- Inner border glow effect -->
+                  <div class="absolute inset-0 rounded-lg border-2 border-blue-400 opacity-75 shadow-[0_0_15px_rgba(59,130,246,0.5)] animate-pulse">
+                  </div>
+                </div>
+                <!-- Layered decorative elements for 3D effect -->
+                <div class="absolute -bottom-2 -right-2 w-20 h-20 border-2 border-blue-500 rounded-lg z-0 bg-gradient-to-br from-blue-50 to-transparent">
+                </div>
+                <div class="absolute -bottom-4 -right-4 w-20 h-20 border border-blue-300 rounded-lg opacity-50">
+                </div>
+                <!-- Corner accent -->
+                <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-blue-500 rounded-br-lg rounded-tl-lg z-0 transform rotate-12 opacity-80">
+                </div>
               </div>
-              <div class="text-sm text-gray-500 mt-3 md:text-right">Nov 2024 - Present</div>
+              <div class="text-sm text-gray-500 mt-6 md:text-right font-medium">Nov 2024 - Present</div>
             </div>
             
-            <!-- Right side: Content -->
+            <!-- Right side: Content with 3D card styling -->
             <div class="flex-1">
-              <h3 class="text-xl font-semibold text-gray-900">Technology Associate</h3>
-              <h4 class="text-blue-600 font-medium mb-5">Lithan EduClaaS</h4>
-              
-              <ul class="space-y-3 mb-7">
-                <li class="flex items-start">
-                  <span class="text-blue-500 mr-3">•</span>
-                  <span class="text-gray-600">Webhosting and web server management</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-blue-500 mr-3">•</span>
-                  <span class="text-gray-600">Hands-on experience in LMS platform technical administration</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-blue-500 mr-3">•</span>
-                  <span class="text-gray-600">Any other tasks related to the business unit</span>
-                </li>
-              </ul>
-              
-              <div class="border-t border-gray-100 pt-5">
-                <h5 class="text-sm font-medium text-gray-700 mb-3">Technologies Used</h5>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1.5 bg-gray-50 text-gray-700 text-xs rounded-full">Laravel</span>
-                  <span class="px-3 py-1.5 bg-gray-50 text-gray-700 text-xs rounded-full">PHP</span>
-                  <span class="px-3 py-1.5 bg-gray-50 text-gray-700 text-xs rounded-full">MySQL</span>
-                  <span class="px-3 py-1.5 bg-gray-50 text-gray-700 text-xs rounded-full">OpenAI API</span>
+              <div class="relative">
+                <!-- Main content card with 3D effect -->
+                <div class="relative z-10 transform transition-transform duration-500 hover:-translate-y-1">
+                  <div class="bg-white p-6 rounded-lg shadow-xl relative"
+                       style="box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.05) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;">
+                    
+                    <!-- Job title and company -->
+                    <div class="mb-5">
+                      <h3 class="text-xl font-semibold text-gray-900">Technology Associate</h3>
+                      <h4 class="text-blue-600 font-medium">Lithan EduClaaS</h4>
+                      
+                      <!-- Status badge -->
+                      <div class="inline-block px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full font-medium mt-2 border border-green-200">
+                        Current Position
+                      </div>
+                    </div>
+                    
+                    <!-- Responsibilities with improved bullets -->
+                    <ul class="space-y-3 mb-7">
+                      <li class="flex items-start">
+                        <span class="text-blue-500 mr-3 text-lg">•</span>
+                        <span class="text-gray-600">Webhosting and web server management</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-blue-500 mr-3 text-lg">•</span>
+                        <span class="text-gray-600">Hands-on experience in LMS platform technical administration</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-blue-500 mr-3 text-lg">•</span>
+                        <span class="text-gray-600">Any other tasks related to the business unit</span>
+                      </li>
+                    </ul>
+                    
+                    <!-- Technologies with improved styling -->
+                    <div class="border-t border-gray-100 pt-5">
+                      <h5 class="text-sm font-medium text-gray-700 mb-3">Technologies Used</h5>
+                      <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-100">Laravel</span>
+                        <span class="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-100">PHP</span>
+                        <span class="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-100">MySQL</span>
+                        <span class="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-100">OpenAI API</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Inner border glow effect -->
+                  <div class="absolute inset-0 rounded-lg border-2 border-blue-400 opacity-30 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                  </div>
+                </div>
+                
+                <!-- Layered decorative elements for 3D effect -->
+                <div class="absolute -bottom-3 -right-3 w-full h-full border-2 border-blue-500 rounded-lg z-0 bg-gradient-to-br from-blue-50 to-transparent">
+                </div>
+                <div class="absolute -bottom-5 -right-5 w-full h-full border border-blue-300 rounded-lg opacity-50">
+                </div>
+                
+                <!-- Corner accent -->
+                <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-blue-500 rounded-br-lg rounded-tl-lg z-0 transform rotate-12 opacity-80">
+                </div>
+                
+                <!-- Subtle floating dots for dimension -->
+                <div class="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-blue-100 opacity-70">
+                </div>
+                <div class="absolute top-20 -left-6 w-4 h-4 rounded-full bg-blue-300 opacity-50">
                 </div>
               </div>
             </div>
           </div>
         </div>
+        
+        <!-- You can add more experience items here following the same pattern -->
+        
       </div>
     </div>
   </div>

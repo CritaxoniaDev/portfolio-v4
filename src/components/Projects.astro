@@ -1,0 +1,217 @@
+---
+// Import project images
+import dobuImage from '../assets/projects/project-2.png';
+import enomyImage from '../assets/projects/project-4.png';
+import abcCarsImage from '../assets/projects/project-5.png';
+import mealsOnWheelsImage from '../assets/projects/project-6.png';
+import minstrelMuseImage from '../assets/projects/minstrel-muse.png';
+import cmaImage from '../assets/projects/CMA.png';
+
+// Project data with enhanced descriptions and details
+const projects = [
+  {
+    title: "DoBu Martial Arts",
+    description: "An immersive digital platform for a martial arts gym showcasing various disciplines, personalized training programs, and membership management.",
+    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"],
+    image: dobuImage,
+    githubLink: "https://github.com/CritaxoniaDev/Dobu-Martial-Arts",
+    objective: "Design and create an engaging website for DoBu Martial Arts, showcasing the gym's offerings and allowing users to manage their membership.",
+    highlight: "Responsive Design"
+  },
+  {
+    title: "Enomy Finances",
+    description: "A sophisticated financial management system with intuitive dashboards, secure transaction processing, and comprehensive reporting tools.",
+    technologies: ["JSP", "CSS", "JavaScript", "Bootstrap", "MySQL", "Java (Spring Framework)"],
+    image: enomyImage,
+    githubLink: "https://github.com/CritaxoniaDev/Enomy-Finances",
+    objective: "Design and implement a new computer system for Enomy-Finances, including core system processes and software designs for client presentation.",
+    highlight: "Secure Transactions"
+  },
+  {
+    title: "ABC Cars Portal",
+    description: "A feature-rich marketplace connecting buyers and sellers of used vehicles with advanced search, bidding system, and administrative controls.",
+    technologies: ["JSP", "CSS", "Bootstrap", "JavaScript", "MySQL", "Java (Spring Framework)", "Spring Boot"],
+    image: abcCarsImage,
+    githubLink: "https://github.com/CritaxoniaDev/ABCCarsPortal",
+    objective: "Create a comprehensive online platform facilitating the buying and selling of used cars, with distinct functionalities for users and administrators.",
+    highlight: "Advanced Search"
+  },
+  {
+    title: "Meals on Wheels",
+    description: "A compassionate solution enabling meal delivery to those in need, featuring volunteer management, meal planning, and real-time delivery tracking.",
+    technologies: ["PHP", "Laravel", "Blade", "MySQL", "CSS", "JavaScript", "Tailwind", "Stripe API"],
+    image: mealsOnWheelsImage,
+    githubLink: "https://github.com/CritaxoniaDev/Mealsonwheels",
+    objective: "Design and develop a comprehensive software application for MerryMeal to streamline various processes including registration, meal planning, and delivery management.",
+    highlight: "Stripe Integration"
+  },
+  {
+    title: "MinstrelMuse",
+    description: "A sleek music discovery platform with YouTube API integration, personalized playlists, and an immersive listening experience for music enthusiasts.",
+    technologies: ["React", "Youtube API", "Tailwind", "CSS", "JavaScript", "Firebase Authentication", "Firebase Storage", "Firebase Firestore"],
+    image: minstrelMuseImage,
+    githubLink: "https://minstrelmuse.vercel.app/",
+    objective: "Create an engaging music discovery platform with seamless YouTube integration and personalized user experiences.",
+    highlight: "YouTube API"
+  },
+  {
+    title: "Conversational Marketing AI App",
+    description: "An enterprise-grade AI platform revolutionizing customer engagement through natural language processing, automated responses, and intelligent lead generation.",
+    technologies: ["Laravel", "TinyMCE API", "PHP", "Blade", "JavaScript", "MySQL", "OpenAI API", "Microsoft Auth API", "CSS"],
+    image: cmaImage,
+    githubLink: "#",
+    objective: "Developed an industry-level AI conversation platform that leverages natural language processing to automate customer interactions and improve lead generation.",
+    highlight: "OpenAI Integration"
+  },
+//   {
+//     title: "MarshalMuse",
+//     description: "An enterprise-grade AI platform revolutionizing customer engagement through natural language processing, automated responses, and intelligent lead generation.",
+//     technologies: ["Laravel", "TinyMCE API", "PHP", "Blade", "JavaScript", "MySQL", "OpenAI API", "Microsoft Auth API", "CSS"],
+//     image: cmaImage,
+//     githubLink: "#",
+//     objective: "Developed an industry-level AI conversation platform that leverages natural language processing to automate customer interactions and improve lead generation.",
+//     highlight: "OpenAI Integration"
+//   }
+];
+---
+
+<section id="projects" class="py-32 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section heading with animated underline -->
+      <div class="mb-16 text-center">
+        <span class="text-blue-600 text-sm font-medium uppercase tracking-wider">Showcase</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Projects</h2>
+        <div class="h-1 w-12 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+        <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Explore my portfolio of innovative solutions across various domains, showcasing my technical versatility and problem-solving approach.</p>
+      </div>
+      
+      <!-- Projects grid with enhanced 3D cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {projects.map((project, index) => (
+          <div class="relative group">
+            <!-- Main project card with enhanced 3D effect similar to Education.astro -->
+            <div class="relative z-10 transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-1 h-full">
+              <div class="bg-white rounded-lg shadow-xl relative flex flex-col h-full overflow-hidden"
+                   style="box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.05) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;">
+                
+                <!-- Project image with floating effect -->
+                <div class="relative h-48 overflow-hidden">
+                  <img 
+                    src={project.image.src} 
+                    alt={project.title}
+                    class="w-full h-full object-cover object-center transform transition-transform duration-500 group-hover:scale-110"
+                  />
+                  
+                  <!-- Overlay gradient for better text visibility -->
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  <!-- Floating technology badge - highlight feature -->
+                  <div class="absolute top-3 right-3">
+                    <span class="px-3 py-1 bg-blue-500 text-white text-xs rounded-full font-medium shadow-lg">
+                      {project.highlight}
+                    </span>
+                  </div>
+                  
+                  <!-- Project title overlay on image - appears on hover -->
+                  <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none">
+                    <h3 class="text-white font-semibold text-lg">{project.title}</h3>
+                  </div>
+                </div>
+                
+                <!-- Project content with enhanced styling -->
+                <div class="p-6 flex flex-col flex-grow">
+                  <!-- Only show title in the body when not hovering -->
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2 group-hover:opacity-0 transition-opacity duration-300">{project.title}</h3>
+                  
+                  <p class="text-gray-600 text-sm mb-4 flex-grow">{project.description}</p>
+                  
+                  <!-- Technologies with improved styling -->
+                  <div class="mb-4">
+                    <h4 class="text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">Technologies</h4>
+                    <div class="flex flex-wrap gap-2">
+                      {project.technologies.slice(0, 4).map(tech => (
+                        <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-100 hover:bg-blue-100 transition-colors duration-300">
+                          {tech}
+                        </span>
+                      ))}
+                      {project.technologies.length > 4 && (
+                        <span class="px-2 py-1 bg-gray-50 text-gray-700 text-xs rounded-full border border-gray-100 hover:bg-gray-100 transition-colors duration-300">
+                          +{project.technologies.length - 4} more
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <!-- Link with enhanced styling and improved clickability -->
+                  <div class="relative z-20">
+                    <a 
+                      href={project.githubLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors duration-300 cursor-pointer"
+                    >
+                      View Project
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H3a1 1 0 110-2h9.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                
+                <!-- Pulsing dot indicator -->
+                <div class="absolute top-3 left-3 flex items-center">
+                  <span class="h-2 w-2 bg-green-500 rounded-full mr-1 animate-pulse"></span>
+                  <span class="text-xs text-white font-medium bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">Live Project</span>
+                </div>
+              </div>
+              <!-- Inner border glow effect -->
+              <div class="absolute inset-0 rounded-lg border-2 border-blue-400 opacity-0 group-hover:opacity-30 transition-opacity duration-300 shadow-[0_0_15px_rgba(59,130,246,0.3)] pointer-events-none">
+              </div>
+            </div>
+            
+            <!-- Layered decorative elements for 3D effect - similar to Education.astro -->
+            <div class="absolute -bottom-3 -right-3 w-full h-full border-2 border-blue-500 rounded-lg z-0 bg-gradient-to-br from-blue-50 to-transparent opacity-30 pointer-events-none">
+            </div>
+            <div class="absolute -bottom-5 -right-5 w-full h-full border border-blue-300 rounded-lg opacity-20 pointer-events-none">
+            </div>
+            
+            <!-- Corner accent - alternating sides based on card position -->
+            <div class={`absolute -bottom-2 ${index % 2 === 0 ? '-right-2' : '-left-2'} w-10 h-10 bg-blue-500 ${index % 2 === 0 ? 'rounded-br-lg rounded-tl-lg' : 'rounded-bl-lg rounded-tr-lg'} z-0 transform ${index % 2 === 0 ? 'rotate-12' : 'rotate-12'} opacity-80 pointer-events-none`}>
+            </div>
+            
+            <!-- Subtle floating dots for dimension - alternating sides -->
+            <div class={`absolute -top-4 ${index % 2 === 0 ? '-right-4' : '-left-4'} w-6 h-6 rounded-full bg-blue-100 opacity-70 pointer-events-none`}>
+            </div>
+            <div class={`absolute top-20 ${index % 2 === 0 ? '-right-6' : '-left-6'} w-3 h-3 rounded-full bg-blue-300 opacity-50 pointer-events-none`}>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <!-- View more projects link with enhanced styling -->
+      <div class="mt-16 text-center relative">
+        <div class="relative z-10 transform transition-transform duration-300 hover:-translate-y-1 inline-block">
+          <a 
+            href="https://github.com/CritaxoniaDev" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-8 py-3 bg-transparent border-b-2 border-blue-500 text-gray-800 hover:bg-blue-50 transition-all duration-300 font-medium group"
+          >
+            View More on GitHub
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H3a1 1 0 110-2h9.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+          <!-- Inner border glow effect -->
+          <div class="absolute inset-0 border-2 border-blue-400 opacity-0 hover:opacity-30 transition-opacity duration-300 shadow-[0_0_15px_rgba(59,130,246,0.3)] pointer-events-none">
+          </div>
+        </div>
+        
+        <!-- Decorative elements for the button -->
+        <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-blue-500 rounded-br-lg rounded-tl-lg z-0 transform rotate-12 opacity-10 left-1/2 ml-16 pointer-events-none">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

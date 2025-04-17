@@ -64,12 +64,6 @@ const skills = [
         category: "frontend",
         color: "text-blue-400",
     },
-    {
-        name: "Next.js",
-        icon: SiNextdotjs,
-        category: "frontend",
-        color: "text-gray-800 dark:text-white",
-    },
     { name: "Java", icon: FaJava, category: "backend", color: "text-red-500" },
     {
         name: "Spring Boot",
@@ -84,12 +78,6 @@ const skills = [
         color: "text-blue-600",
     },
     {
-        name: "Spring MVC",
-        icon: FaLeaf,
-        category: "backend",
-        color: "text-green-600",
-    },
-    {
         name: "Liferay",
         icon: FaLifeRing,
         category: "backend",
@@ -101,18 +89,6 @@ const skills = [
         icon: FaLaravel,
         category: "backend",
         color: "text-red-600",
-    },
-    {
-        name: "Apache",
-        icon: FaServer,
-        category: "backend",
-        color: "text-red-500",
-    },
-    {
-        name: "Tomcat",
-        icon: FaCat,
-        category: "backend",
-        color: "text-yellow-600",
     },
     {
         name: "Firebase",
@@ -167,29 +143,52 @@ const categories = {
                 </div>
             </div>
 
-            <!-- Skills Categories -->
-            <div class="space-y-12">
+            <!-- Skills Categories with 3D effect -->
+            <div class="space-y-16">
                 {
-                    Object.entries(categories).map(([key, category]) => (
-                        <div class="skill-category">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
-                                <span class="h-5 w-1 bg-blue-500 rounded-full mr-3" />
-                                {category.title}
-                            </h3>
+                    Object.entries(categories).map(([key, category], categoryIndex) => (
+                        <div class="skill-category relative">
+                            <!-- Category heading with 3D accent -->
+                            <div class="relative mb-8">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                                    <span class="h-5 w-1 bg-blue-500 rounded-full mr-3" />
+                                    {category.title}
+                                </h3>
+                                <div class="h-px w-full bg-gradient-to-r from-blue-100 via-blue-300 to-transparent"></div>
+                                
+                                <!-- Decorative element -->
+                                <div class={`absolute -bottom-3 ${categoryIndex % 2 === 0 ? '-right-2' : '-left-2'} w-8 h-8 bg-blue-500 ${categoryIndex % 2 === 0 ? 'rounded-br-lg rounded-tl-lg' : 'rounded-bl-lg rounded-tr-lg'} z-0 transform ${categoryIndex % 2 === 0 ? 'rotate-12' : 'rotate-12'} opacity-10`}></div>
+                            </div>
 
-                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                                {category.skills.map((skill) => (
-                                    <div class="group transform hover:-translate-y-1 transition-all duration-200">
-                                        <div class="flex flex-col items-center p-4 rounded-lg border border-gray-100 bg-white hover:border-blue-100 hover:shadow-sm transition-all duration-200 h-full">
-                                            <div
-                                                class={`text-2xl mb-2 ${skill.color} opacity-80 group-hover:opacity-100`}
-                                            >
-                                                <skill.icon />
+                            <!-- Skills grid with 3D cards -->
+                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+                                {category.skills.map((skill, index) => (
+                                    <div class="relative">
+                                        <!-- Main skill card with 3D effect -->
+                                        <div class="relative z-10 transform transition-all duration-300 hover:-translate-y-2 hover:rotate-1">
+                                            <div class="bg-white p-4 rounded-lg shadow-lg relative flex flex-col items-center h-full"
+                                                 style="box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;">
+                                                <div class={`text-3xl mb-3 ${skill.color} opacity-90 group-hover:opacity-100`}>
+                                                    <skill.icon />
+                                                </div>
+                                                <span class="text-gray-700 text-sm font-medium">
+                                                    {skill.name}
+                                                </span>
+                                                
+                                                <!-- Subtle glow effect on hover -->
+                                                <div class="absolute inset-0 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300 shadow-[0_0_15px_rgba(59,130,246,0.3)]"></div>
                                             </div>
-                                            <span class="text-gray-600 text-sm">
-                                                {skill.name}
-                                            </span>
+                                            <!-- Inner border glow effect -->
+                                            <div class="absolute inset-0 rounded-lg border border-blue-200 opacity-0 hover:opacity-50 transition-opacity duration-300"></div>
                                         </div>
+                                        
+                                        <!-- Layered decorative elements for 3D effect - smaller for skill cards -->
+                                        <div class="absolute -bottom-1 -right-1 w-full h-full border border-blue-200 rounded-lg z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                                        
+                                        <!-- Subtle floating dot for dimension - only on some cards for visual interest -->
+                                        {index % 3 === 0 && (
+                                            <div class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-blue-200 opacity-40"></div>
+                                        )}
                                     </div>
                                 ))}
                             </div>
@@ -198,15 +197,21 @@ const categories = {
                 }
             </div>
 
-            <!-- Skill level indicator (optional) -->
-            <div class="mt-20 text-center">
-                <p class="text-gray-500 text-sm italic">
-                    Continuously learning and expanding my technical toolkit
-                </p>
-                <div
-                    class="h-1 bg-gradient-to-r from-blue-300 via-blue-500 to-blue-300 max-w-xs mx-auto mt-3 rounded-full"
-                >
+            <!-- Skill level indicator with enhanced styling -->
+            <div class="mt-20 relative">
+                <div class="relative z-10 bg-white p-6 rounded-lg shadow-md text-center"
+                     style="box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;">
+                    <p class="text-gray-500 text-sm italic">
+                        Continuously learning and expanding my technical toolkit
+                    </p>
+                    <div class="h-1 bg-gradient-to-r from-blue-300 via-blue-500 to-blue-300 max-w-xs mx-auto mt-3 rounded-full animate-pulse"></div>
                 </div>
+                
+                <!-- Layered decorative elements for 3D effect -->
+                <div class="absolute -bottom-2 -right-2 w-full h-full border-2 border-blue-100 rounded-lg z-0 bg-gradient-to-br from-blue-50 to-transparent opacity-50"></div>
+                
+                <!-- Corner accent -->
+                <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-blue-500 rounded-br-lg rounded-tl-lg z-0 transform rotate-12 opacity-10"></div>
             </div>
         </div>
     </div>
