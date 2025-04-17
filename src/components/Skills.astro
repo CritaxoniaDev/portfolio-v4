@@ -1,0 +1,213 @@
+---
+// Import React icons
+import {
+    FaHtml5,
+    FaCss3Alt,
+    FaBootstrap,
+    FaJs,
+    FaJsSquare,
+    FaWind,
+    FaReact,
+    FaJava,
+    FaLeaf,
+    FaDatabase,
+    FaLifeRing,
+    FaPhp,
+    FaLaravel,
+    FaServer,
+    FaCat,
+    FaPencilRuler,
+    FaFigma,
+} from "react-icons/fa";
+import { SiNextdotjs, SiFirebase } from "react-icons/si";
+
+const skills = [
+    {
+        name: "HTML",
+        icon: FaHtml5,
+        category: "frontend",
+        color: "text-red-500",
+    },
+    {
+        name: "CSS",
+        icon: FaCss3Alt,
+        category: "frontend",
+        color: "text-blue-500",
+    },
+    {
+        name: "Bootstrap",
+        icon: FaBootstrap,
+        category: "frontend",
+        color: "text-purple-500",
+    },
+    {
+        name: "JavaScript",
+        icon: FaJs,
+        category: "frontend",
+        color: "text-yellow-400",
+    },
+    {
+        name: "jQuery",
+        icon: FaJsSquare,
+        category: "frontend",
+        color: "text-blue-400",
+    },
+    {
+        name: "Tailwind",
+        icon: FaWind,
+        category: "frontend",
+        color: "text-teal-500",
+    },
+    {
+        name: "React",
+        icon: FaReact,
+        category: "frontend",
+        color: "text-blue-400",
+    },
+    {
+        name: "Next.js",
+        icon: SiNextdotjs,
+        category: "frontend",
+        color: "text-gray-800 dark:text-white",
+    },
+    { name: "Java", icon: FaJava, category: "backend", color: "text-red-500" },
+    {
+        name: "Spring Boot",
+        icon: FaLeaf,
+        category: "backend",
+        color: "text-green-500",
+    },
+    {
+        name: "MySQL",
+        icon: FaDatabase,
+        category: "backend",
+        color: "text-blue-600",
+    },
+    {
+        name: "Spring MVC",
+        icon: FaLeaf,
+        category: "backend",
+        color: "text-green-600",
+    },
+    {
+        name: "Liferay",
+        icon: FaLifeRing,
+        category: "backend",
+        color: "text-blue-500",
+    },
+    { name: "PHP", icon: FaPhp, category: "backend", color: "text-purple-600" },
+    {
+        name: "Laravel",
+        icon: FaLaravel,
+        category: "backend",
+        color: "text-red-600",
+    },
+    {
+        name: "Apache",
+        icon: FaServer,
+        category: "backend",
+        color: "text-red-500",
+    },
+    {
+        name: "Tomcat",
+        icon: FaCat,
+        category: "backend",
+        color: "text-yellow-600",
+    },
+    {
+        name: "Firebase",
+        icon: SiFirebase,
+        category: "backend",
+        color: "text-yellow-500",
+    },
+    {
+        name: "Axure RP",
+        icon: FaPencilRuler,
+        category: "uiux",
+        color: "text-gray-600",
+    },
+    {
+        name: "Figma",
+        icon: FaFigma,
+        category: "uiux",
+        color: "text-purple-500",
+    },
+];
+
+// Group skills by category
+const categories = {
+    frontend: {
+        title: "Frontend Development",
+        skills: skills.filter((skill) => skill.category === "frontend"),
+    },
+    backend: {
+        title: "Backend Development",
+        skills: skills.filter((skill) => skill.category === "backend"),
+    },
+    uiux: {
+        title: "UI/UX Design",
+        skills: skills.filter((skill) => skill.category === "uiux"),
+    },
+};
+---
+
+<section id="skills" class="py-32 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+            <!-- Section heading with animated underline -->
+            <div class="mb-16 text-center">
+                <span
+                    class="text-blue-600 text-sm font-medium uppercase tracking-wider"
+                    >Expertise</span
+                >
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
+                    Technical Skills
+                </h2>
+                <div class="h-1 w-12 bg-blue-500 mx-auto mt-4 rounded-full">
+                </div>
+            </div>
+
+            <!-- Skills Categories -->
+            <div class="space-y-12">
+                {
+                    Object.entries(categories).map(([key, category]) => (
+                        <div class="skill-category">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                                <span class="h-5 w-1 bg-blue-500 rounded-full mr-3" />
+                                {category.title}
+                            </h3>
+
+                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                                {category.skills.map((skill) => (
+                                    <div class="group transform hover:-translate-y-1 transition-all duration-200">
+                                        <div class="flex flex-col items-center p-4 rounded-lg border border-gray-100 bg-white hover:border-blue-100 hover:shadow-sm transition-all duration-200 h-full">
+                                            <div
+                                                class={`text-2xl mb-2 ${skill.color} opacity-80 group-hover:opacity-100`}
+                                            >
+                                                <skill.icon />
+                                            </div>
+                                            <span class="text-gray-600 text-sm">
+                                                {skill.name}
+                                            </span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+
+            <!-- Skill level indicator (optional) -->
+            <div class="mt-20 text-center">
+                <p class="text-gray-500 text-sm italic">
+                    Continuously learning and expanding my technical toolkit
+                </p>
+                <div
+                    class="h-1 bg-gradient-to-r from-blue-300 via-blue-500 to-blue-300 max-w-xs mx-auto mt-3 rounded-full"
+                >
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

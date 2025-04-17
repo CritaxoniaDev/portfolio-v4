@@ -1,164 +1,271 @@
 ---
 // Define navigation items with icon names
 const navItems = [
-  { name: 'Home', url: '/', icon: 'home' },
-  { name: 'About Me', url: '#about', icon: 'user' },
-  { name: 'Experience', url: '#experience', icon: 'briefcase' },
-  { name: 'Education', url: '#education', icon: 'graduation-cap' },
-  { name: 'Skills', url: '#skills', icon: 'cog' },
-  { name: 'Projects', url: '#projects', icon: 'code-branch' },
-  { name: 'Contact', url: '#contact', icon: 'envelope' }
+  { name: "Home", url: "/", icon: "home" },
+  { name: "About Me", url: "#about", icon: "user" },
+  { name: "Experience", url: "#experience", icon: "briefcase" },
+  { name: "Education", url: "#education", icon: "graduation-cap" },
+  { name: "Skills", url: "#skills", icon: "cog" },
+  { name: "Projects", url: "#projects", icon: "code-branch" },
+  { name: "Contact", url: "#contact", icon: "envelope" },
 ];
 
 // Get current path to highlight active link
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="fixed w-full z-50 py-5">
+<header class="fixed w-full z-50 transition-all duration-500 py-5">
   <div class="container mx-auto px-6">
-    <!-- Frosted glass effect background -->
-    <div class="absolute inset-0 bg-white/70 backdrop-blur-md shadow-sm"></div>
-    
+    <!-- Improved frosted glass effect background -->
+    <div
+      class="absolute inset-0 bg-white/80 backdrop-blur-lg shadow-sm rounded-xl"
+    >
+    </div>
+
     <div class="relative flex items-center justify-between">
-      <!-- Logo/Name with subtle animation -->
-      <a 
-        href="/" 
-        class="text-xl font-light tracking-wide text-gray-900 hover:text-blue-600 transition-colors duration-300"
+      <!-- Enhanced logo/name with subtle animation -->
+      <a
+        href="/"
+        class="group text-xl font-light tracking-wide text-gray-900 transition-all duration-300"
       >
-        <span class="font-semibold">G</span>ian Raphael
+        <span class="font-semibold text-blue-600 transition-all duration-300"
+          >G</span
+        >ian
+        <span class="font-light text-gray-700 transition-all duration-300"
+          >Raphael</span
+        >
+        <span
+          class="block h-0.5 w-0 group-hover:w-full bg-blue-500/30 transition-all duration-500 ease-in-out"
+        ></span>
       </a>
-      
-      <!-- Desktop Navigation - Minimal horizontal line design -->
+
+      <!-- Refined desktop navigation with smoother animations -->
       <nav class="hidden md:block">
-        <ul class="flex space-x-8">
-          {navItems.map((item) => {
-            const isActive = currentPath === item.url || 
-                            (item.url !== "/" && currentPath.startsWith(item.url));
-            return (
-              <li>
-                <a 
-                  href={item.url} 
-                  class={`relative py-2 text-sm uppercase tracking-wider font-light transition-colors duration-300 flex items-center gap-1.5
-                    ${isActive ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'}`}
-                >
-                  <i class={`fas fa-${item.icon} text-xs`}></i>
-                  {item.name}
-                  <span class={`absolute left-0 right-0 bottom-0 h-px bg-blue-600 transform origin-left transition-transform duration-300 ease-out
-                    ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
-                </a>
-              </li>
-            );
-          })}
+        <ul class="flex space-x-6">
+          {
+            navItems.map((item) => {
+              const isActive =
+                currentPath === item.url ||
+                (item.url !== "/" && currentPath.startsWith(item.url));
+              return (
+                <li>
+                  <a
+                    href={item.url}
+                    class={`group relative py-2 px-1 text-sm uppercase tracking-wider font-light transition-all duration-300 flex items-center gap-1.5
+                    ${isActive ? "text-blue-600" : "text-gray-600 hover:text-blue-600"}`}
+                  >
+                    <i
+                      class={`fas fa-${item.icon} text-xs opacity-70 group-hover:opacity-100 transition-opacity duration-300`}
+                    />
+                    <span class="relative z-10">{item.name}</span>
+                    <span
+                      class={`absolute left-0 right-0 bottom-0 h-px bg-blue-500 transform origin-left transition-all duration-500 ease-out
+                    ${isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+                    />
+                  </a>
+                </li>
+              );
+            })
+          }
         </ul>
       </nav>
-      
-      <!-- Minimal Mobile Menu Button -->
-      <button 
-        id="mobile-menu-button" 
-        class="md:hidden w-8 h-8 flex items-center justify-center text-gray-600 focus:outline-none"
+
+      <!-- Refined mobile menu button with smoother animation -->
+      <button
+        id="mobile-menu-button"
+        class="md:hidden w-10 h-10 flex items-center justify-center text-gray-600 focus:outline-none rounded-full hover:bg-gray-50 transition-colors duration-300"
         aria-label="Toggle menu"
       >
-        <div class="relative w-5 h-5">
-          <span id="line-1" class="absolute top-0 left-0 w-full h-0.5 bg-gray-600 transform transition-all duration-300"></span>
-          <span id="line-2" class="absolute top-2 left-0 w-full h-0.5 bg-gray-600 transform transition-all duration-300"></span>
-          <span id="line-3" class="absolute top-4 left-0 w-full h-0.5 bg-gray-600 transform transition-all duration-300"></span>
+        <div class="relative w-5 h-4">
+          <span
+            id="line-1"
+            class="absolute top-0 left-0 w-full h-0.5 bg-gray-600 rounded-full transform transition-all duration-300 ease-in-out"
+          ></span>
+          <span
+            id="line-2"
+            class="absolute top-1/2 -translate-y-1/2 left-0 w-full h-0.5 bg-gray-600 rounded-full transform transition-all duration-300 ease-in-out"
+          ></span>
+          <span
+            id="line-3"
+            class="absolute bottom-0 left-0 w-full h-0.5 bg-gray-600 rounded-full transform transition-all duration-300 ease-in-out"
+          ></span>
         </div>
       </button>
     </div>
   </div>
-  
-  <!-- Minimal Mobile Navigation Overlay -->
-  <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-lg z-50 flex items-center justify-center transform translate-y-full transition-transform duration-500 ease-in-out">
-    <nav class="text-center">
-      <ul class="flex flex-col space-y-6">
-        {navItems.map((item) => (
-          <li>
-            <a 
-              href={item.url} 
-              class="text-xl font-light text-gray-800 hover:text-blue-600 transition-colors duration-300 flex items-center justify-center gap-2"
-              data-mobile-link
-            >
-              <i class={`fas fa-${item.icon}`}></i>
-              {item.name}
-            </a>
-          </li>
-        ))}
-      </ul> 
+
+  <!-- Enhanced mobile navigation overlay with smoother transitions -->
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 bg-white/95 backdrop-blur-xl z-50 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-500 ease-in-out"
+  >
+    <nav
+      class="text-center transform translate-y-8 transition-transform duration-500 ease-out"
+    >
+      <ul class="flex flex-col space-y-7">
+        {
+          navItems.map((item, index) => (
+            <li class="overflow-hidden">
+              <a
+                href={item.url}
+                class="text-xl font-light text-gray-800 hover:text-blue-600 transition-all duration-300 flex items-center justify-center gap-3 opacity-0 mobile-link"
+                data-mobile-link
+                data-index={index}
+              >
+                <i class={`fas fa-${item.icon} text-blue-500/70`} />
+                {item.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </nav>
   </div>
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const line1 = document.getElementById('line-1');
-    const line2 = document.getElementById('line-2');
-    const line3 = document.getElementById('line-3');
-    const mobileLinks = document.querySelectorAll('[data-mobile-link]');
-    
+  document.addEventListener("DOMContentLoaded", () => {
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+
+    const mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
+    const line1 = document.getElementById("line-1") as HTMLElement;
+    const line2 = document.getElementById("line-2") as HTMLElement;
+    const line3 = document.getElementById("line-3") as HTMLElement;
+    const mobileLinks = document.querySelectorAll(
+      "[data-mobile-link]",
+    ) as NodeListOf<HTMLElement>;
+    const navContainer = document.querySelector(
+      "#mobile-menu nav",
+    ) as HTMLElement;
+
     let isOpen = false;
-    
-    if (mobileMenuButton && mobileMenu && line1 && line2 && line3) {
-      // Toggle menu function with animation
+
+    if (
+      mobileMenuButton &&
+      mobileMenu &&
+      line1 &&
+      line2 &&
+      line3 &&
+      navContainer
+    ) {
+      // Enhanced toggle menu function with smoother animations
       const toggleMenu = () => {
         isOpen = !isOpen;
-        
-        // Animate the menu overlay
-        mobileMenu.style.transform = isOpen ? 'translateY(0)' : 'translateY(100%)';
-        
-        // Animate the hamburger to X
+
+        // Animate the menu overlay with opacity and pointer events
         if (isOpen) {
-          line1.classList.add('rotate-45', 'top-2');
-          line2.classList.add('opacity-0');
-          line3.classList.add('-rotate-45', 'top-2');
+          mobileMenu.style.opacity = "1";
+          mobileMenu.style.pointerEvents = "auto";
+          navContainer.style.transform = "translateY(0)";
+
+          // Staggered animation for links
+          mobileLinks.forEach((link, index) => {
+            setTimeout(
+              () => {
+                link.style.opacity = "1";
+                link.style.transform = "translateY(0)";
+              },
+              100 + index * 50,
+            );
+          });
         } else {
-          line1.classList.remove('rotate-45', 'top-2');
-          line2.classList.remove('opacity-0');
-          line3.classList.remove('-rotate-45', 'top-2');
+          // Reset links first (in reverse order)
+          [...mobileLinks].reverse().forEach((link, index) => {
+            setTimeout(() => {
+              link.style.opacity = "0";
+              link.style.transform = "translateY(20px)";
+            }, index * 30);
+          });
+
+          // Then hide the menu after links are hidden
+          setTimeout(
+            () => {
+              mobileMenu.style.opacity = "0";
+              mobileMenu.style.pointerEvents = "none";
+              navContainer.style.transform = "translateY(8px)";
+            },
+            mobileLinks.length * 30 + 100,
+          );
+        }
+
+        // Enhanced hamburger to X animation
+        if (isOpen) {
+          line1.style.transform = "translateY(0.5rem) rotate(45deg)";
+          line2.style.opacity = "0";
+          line3.style.transform = "translateY(-0.5rem) rotate(-45deg)";
+        } else {
+          line1.style.transform = "translateY(0) rotate(0)";
+          line2.style.opacity = "1";
+          line3.style.transform = "translateY(0) rotate(0)";
         }
       };
-      
+
       // Toggle on button click
-      mobileMenuButton.addEventListener('click', toggleMenu);
-      
+      mobileMenuButton.addEventListener("click", toggleMenu);
+
       // Close menu when a link is clicked
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
           if (isOpen) toggleMenu();
         });
       });
-      
+
       // Close menu on escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && isOpen) toggleMenu();
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && isOpen) toggleMenu();
       });
     }
-    
-    // Header scroll effect
-    const header = document.querySelector('header');
+
+    // Enhanced header scroll effect with smoother transitions
+    const header = document.querySelector("header") as HTMLElement;
     if (header) {
-      window.addEventListener('scroll', () => {
+      let lastScrollY = window.scrollY;
+      let ticking = false;
+
+      const updateHeader = () => {
         if (window.scrollY > 50) {
-          header.classList.add('py-3', 'shadow-md');
-          header.classList.remove('py-5');
+          header.classList.add("py-3", "shadow-md");
+          header.classList.remove("py-5");
         } else {
-          header.classList.add('py-5');
-          header.classList.remove('py-3', 'shadow-md');
+          header.classList.add("py-5");
+          header.classList.remove("py-3", "shadow-md");
+        }
+
+        ticking = false;
+      };
+
+      window.addEventListener("scroll", () => {
+        lastScrollY = window.scrollY;
+
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            updateHeader();
+            ticking = false;
+          });
+
+          ticking = true;
         }
       });
     }
   });
 </script>
-
 <style>
-  /* Smooth transition for header height change */
+  /* Enhanced smooth transitions */
   header {
-    transition: padding 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  
-  /* Animation for hamburger menu */
-  #line-1, #line-2, #line-3 {
+
+  /* Improved animations for hamburger menu */
+  #line-1,
+  #line-2,
+  #line-3 {
     transform-origin: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Initial state for mobile links */
+  .mobile-link {
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
 </style>
