@@ -1,0 +1,131 @@
+---
+// Get current year for copyright
+const currentYear = new Date().getFullYear();
+
+// Footer links
+const footerLinks = [
+  {
+    title: "Navigation",
+    links: [
+      { name: "Home", url: "#" },
+      { name: "About", url: "#about" },
+      { name: "Experience", url: "#experience" },
+      { name: "Education", url: "#education" },
+      { name: "Skills", url: "#skills" },
+      { name: "Projects", url: "#projects" },
+      { name: "Contact", url: "#contact" }
+    ]
+  },
+  {
+    title: "Social",
+    links: [
+      { name: "GitHub", url: "https://github.com/CritaxoniaDev" },
+      { name: "LinkedIn", url: "https://linkedin.com/in/gian-raphael-alcantara" },
+      { name: "Twitter", url: "#" },
+      { name: "Instagram", url: "#" }
+    ]
+  }
+];
+---
+
+<footer class="relative mt-20">
+  <!-- Wave SVG -->
+  <div class="absolute top-0 left-0 w-full overflow-hidden leading-0 transform -translate-y-full">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-24">
+      <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="fill-blue-50"></path>
+    </svg>
+  </div>
+  
+  <!-- Footer content -->
+  <div class="bg-blue-50 pt-16 pb-12">
+    <div class="container mx-auto px-6">
+      <div class="max-w-6xl mx-auto">
+        <!-- Footer top section -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+          <!-- Logo and description -->
+          <div class="md:col-span-5">
+            <div class="flex items-center mb-4">
+              <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xl mr-3">
+                G
+              </div>
+              <span class="text-xl font-semibold text-gray-800">Gian Raphael</span>
+            </div>
+            <p class="text-gray-600 mb-6 pr-8">
+              Software engineering student passionate about creating elegant solutions through code and design.
+            </p>
+            <div class="flex space-x-4">
+              <a href="https://github.com/CritaxoniaDev" target="_blank" rel="noopener noreferrer" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-500 hover:text-white transition-colors duration-300">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://linkedin.com/in/gian-raphael-alcantara" target="_blank" rel="noopener noreferrer" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-500 hover:text-white transition-colors duration-300">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-500 hover:text-white transition-colors duration-300">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-500 hover:text-white transition-colors duration-300">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Footer links -->
+          {footerLinks.map((section) => (
+            <div class="md:col-span-3">
+              <h3 class="text-sm font-semibold text-gray-800 uppercase tracking-wider mb-4">{section.title}</h3>
+              <ul class="space-y-2">
+                {section.links.map((link) => (
+                  <li>
+                    <a href={link.url} class="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-sm">
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          
+          <!-- Newsletter signup -->
+          <div class="md:col-span-4">
+            <h3 class="text-sm font-semibold text-gray-800 uppercase tracking-wider mb-4">Stay Updated</h3>
+            <p class="text-gray-600 text-sm mb-4">Subscribe to my newsletter for updates on my latest projects and technologies.</p>
+            <form class="flex">
+              <input 
+                type="email" 
+                placeholder="Your email" 
+                class="flex-1 px-4 py-2 text-sm border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+              />
+              <button 
+                type="submit" 
+                class="bg-blue-500 text-white px-4 py-2 text-sm font-medium rounded-r-lg hover:bg-blue-600 transition-colors duration-300"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="h-px bg-gray-200 mb-8"></div>
+        
+        <!-- Footer bottom section -->
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-500 text-sm">
+            &copy; {currentYear} Gian Raphael Alcantara. All rights reserved.
+          </p>
+          <div class="mt-4 md:mt-0">
+            <a href="#" class="text-gray-500 hover:text-blue-600 text-sm transition-colors duration-300 mr-6">Privacy Policy</a>
+            <a href="#" class="text-gray-500 hover:text-blue-600 text-sm transition-colors duration-300">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bottom wave SVG -->
+  <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-0 transform rotate-180 translate-y-full hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-12">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-blue-50"></path>
+    </svg>
+  </div>
+</footer>
