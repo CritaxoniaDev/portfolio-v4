@@ -1,0 +1,454 @@
+/* Main section container */
+.a1b2 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background-color: white;
+  }
+  
+  /* Container */
+  .c3d4 {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  /* Inner container with max width */
+  .e5f6 {
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Section heading container */
+  .g7h8 {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+  
+  /* Section subtitle */
+  .i9j0 {
+    color: #2563eb;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  /* Section title */
+  .k1l2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 0.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .k1l2 {
+      font-size: 2.25rem;
+    }
+  }
+  
+  /* Animated underline */
+  .m3n4 {
+    height: 0.25rem;
+    width: 3rem;
+    background-color: #3b82f6;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    border-radius: 9999px;
+  }
+  
+  /* Grid layout */
+  .o5p6 {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  @media (min-width: 1024px) {
+    .o5p6 {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+  }
+  
+  /* Left column */
+  .q7r8 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .q7r8 {
+      grid-column: span 7 / span 7;
+    }
+  }
+  
+  /* Content container */
+  .s9t0 {
+    position: relative;
+  }
+  
+  /* Main content card with 3D effect */
+  .u1v2 {
+    position: relative;
+    z-index: 10;
+    transform: translateY(0);
+    transition: transform 0.5s;
+  }
+  
+  .u1v2:hover {
+    transform: translateY(-0.25rem);
+  }
+  
+  /* Card styling */
+  .w3x4 {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    position: relative;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.05) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  }
+  
+  /* Profile image container */
+  .y5z6 {
+    position: absolute;
+    top: -4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 7rem;
+    height: 7rem;
+    z-index: 20;
+  }
+  
+  /* Profile image relative container */
+  .a7b8 {
+    position: relative;
+  }
+  
+  /* Profile image wrapper */
+  .c9d0 {
+    position: relative;
+    z-index: 10;
+    transform: rotate(0);
+    transition: transform 0.5s;
+  }
+  
+  .c9d0:hover {
+    transform: rotate(1deg);
+  }
+  
+  /* Profile image */
+  .e1f2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 9999px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  /* Profile image glow effect */
+  .g3h4 {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    border: 2px solid #60a5fa;
+    opacity: 0.75;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.75;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0.75;
+    }
+  }
+  
+  /* Floating dots */
+  .i5j6 {
+    position: absolute;
+    top: -0.5rem;
+    left: -0.5rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 9999px;
+    background-color: #93c5fd;
+    opacity: 0.5;
+  }
+  
+  .k7l8 {
+    position: absolute;
+    top: 2.5rem;
+    right: -0.5rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    background-color: #dbeafe;
+    opacity: 0.7;
+  }
+  
+  /* Content with spacing for image */
+  .m9n0 {
+    margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: #4b5563;
+    line-height: 1.625;
+    font-size: 1.125rem;
+  }
+  
+  /* Quoted paragraph */
+  .o1p2 {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 2px solid #dbeafe;
+  }
+  
+  /* Name highlight */
+  .q3r4 {
+    font-weight: 500;
+    color: #111827;
+  }
+  
+  /* Signature container */
+  .s5t6 {
+    padding-top: 1rem;
+    text-align: center;
+  }
+  
+  /* Signature line */
+  .u7v8 {
+    display: inline-block;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Signature text */
+  .w9x0 {
+    color: #2563eb;
+    font-weight: 500;
+  }
+  
+  /* Card inner glow effect */
+  .y1z2 {
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem;
+    border: 2px solid #60a5fa;
+    opacity: 0.3;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  }
+  
+  /* Layered decorative elements */
+  .a3b4 {
+    position: absolute;
+    bottom: -0.75rem;
+    right: -0.75rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #3b82f6;
+    border-radius: 0.5rem;
+    z-index: 0;
+    background-image: linear-gradient(to bottom right, #eff6ff, transparent);
+  }
+  
+  .c5d6 {
+    position: absolute;
+    bottom: -1.25rem;
+    right: -1.25rem;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #93c5fd;
+    border-radius: 0.5rem;
+    opacity: 0.5;
+  }
+  
+  /* Corner accent */
+  .e7f8 {
+    position: absolute;
+    bottom: -0.5rem;
+    right: -0.5rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: #3b82f6;
+    border-radius: 0 0.5rem 0 0.5rem;
+    z-index: 0;
+    transform: rotate(12deg);
+    opacity: 0.8;
+  }
+  
+  /* Floating dots for dimension */
+  .g9h0 {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    background-color: #dbeafe;
+    opacity: 0.7;
+  }
+  
+  .i1j2 {
+    position: absolute;
+    top: 5rem;
+    left: -1.5rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 9999px;
+    background-color: #93c5fd;
+    opacity: 0.5;
+  }
+  
+  /* Right column */
+  .k3l4 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media (min-width: 1024px) {
+    .k3l4 {
+      grid-column: span 5 / span 5;
+    }
+  }
+  
+  /* Values cards container */
+  .m5n6 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Value card container */
+  .o7p8 {
+    position: relative;
+  }
+  
+  /* Value card with 3D effect */
+  .q9r0 {
+    position: relative;
+    z-index: 10;
+    transform: translateY(0) rotate(0);
+    transition: transform 0.5s;
+  }
+  
+  .q9r0:hover {
+    transform: translateY(-0.25rem) rotate(1deg);
+  }
+  
+  /* Value card styling */
+  .s1t2 {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    position: relative;
+  }
+  
+  /* Value card content layout */
+  .u3v4 {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Value card icon container */
+  .w5x6 {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: #eff6ff;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3b82f6;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .u3v4:hover .w5x6 {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  /* Value card icon */
+  .y7z8 {
+    font-size: 1.5rem;
+  }
+  
+  /* Value card text container */
+  .a9b0 {
+    margin-left: 1.25rem;
+  }
+  
+  /* Value card title */
+  .c1d2 {
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+  }
+  
+  /* Value card description */
+  .e3f4 {
+    color: #4b5563;
+  }
+  
+  /* Value card inner glow */
+  .g5h6 {
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem;
+    border: 2px solid #60a5fa;
+    opacity: 0.3;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  }
+  
+  /* Value card layered elements */
+  .i7j8 {
+    position: absolute;
+    bottom: -0.5rem;
+    right: -0.5rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #3b82f6;
+    border-radius: 0.5rem;
+    z-index: 0;
+    background-image: linear-gradient(to bottom right, #eff6ff, transparent);
+  }
+  
+  .k9l0 {
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #93c5fd;
+    border-radius: 0.5rem;
+    opacity: 0.5;
+  }
+  
+  /* Value card corner accent */
+  .m1n2 {
+    position: absolute;
+    bottom: -0.25rem;
+    right: -0.25rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: #3b82f6;
+    border-radius: 0 0.5rem 0 0.5rem;
+    z-index: 0;
+    transform: rotate(12deg);
+    opacity: 0.8;
+  }
+  

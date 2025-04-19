@@ -1,4 +1,7 @@
 ---
+// Import CSS module
+import styles from "../styles/Header.module.css";
+
 // Define navigation items with icon names
 const navItems = [
   { name: "Home", url: "/", icon: "home" },
@@ -14,34 +17,22 @@ const navItems = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="fixed w-full z-50 transition-all duration-500 py-5">
-  <div class="container mx-auto px-6">
+<header class={styles.a1b2} id="main-header">
+  <div class={styles.c3d4}>
     <!-- Improved frosted glass effect background -->
-    <div
-      class="absolute inset-0 bg-white/80 backdrop-blur-lg shadow-sm rounded-xl"
-    >
-    </div>
+    <div class={styles.e5f6}></div>
 
-    <div class="relative flex items-center justify-between">
+    <div class={styles.g7h8}>
       <!-- Enhanced logo/name with subtle animation -->
-      <a
-        href="/"
-        class="group text-xl font-light tracking-wide text-gray-900 transition-all duration-300"
-      >
-        <span class="font-semibold text-blue-600 transition-all duration-300"
-          >G</span
-        >ian
-        <span class="font-light text-gray-700 transition-all duration-300"
-          >Raphael</span
-        >
-        <span
-          class="block h-0.5 w-0 group-hover:w-full bg-blue-500/30 transition-all duration-500 ease-in-out"
-        ></span>
+      <a href="/" class={styles.i9j0}>
+        <span class={styles.k1l2}>G</span>ian
+        <span class={styles.m3n4}>Raphael</span>
+        <span class={styles.o5p6}></span>
       </a>
 
       <!-- Refined desktop navigation with smoother animations -->
-      <nav class="hidden md:block">
-        <ul class="flex space-x-6">
+      <nav class={styles.q7r8}>
+        <ul class={styles.s9t0}>
           {
             navItems.map((item) => {
               const isActive =
@@ -51,16 +42,16 @@ const currentPath = Astro.url.pathname;
                 <li>
                   <a
                     href={item.url}
-                    class={`group relative py-2 px-1 text-sm uppercase tracking-wider font-light transition-all duration-300 flex items-center gap-1.5
-                    ${isActive ? "text-blue-600" : "text-gray-600 hover:text-blue-600"}`}
+                    class={`${styles.u1v2} ${
+                      isActive ? styles.w3x4 : styles.y5z6
+                    }`}
                   >
-                    <i
-                      class={`fas fa-${item.icon} text-xs opacity-70 group-hover:opacity-100 transition-opacity duration-300`}
-                    />
-                    <span class="relative z-10">{item.name}</span>
+                    <i class={`fas fa-${item.icon} ${styles.a7b8}`} />
+                    <span class={styles.c9d0}>{item.name}</span>
                     <span
-                      class={`absolute left-0 right-0 bottom-0 h-px bg-blue-500 transform origin-left transition-all duration-500 ease-out
-                    ${isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+                      class={`${styles.e1f2} ${
+                        isActive ? styles.g3h4 : styles.i5j6
+                      }`}
                     />
                   </a>
                 </li>
@@ -73,46 +64,32 @@ const currentPath = Astro.url.pathname;
       <!-- Refined mobile menu button with smoother animation -->
       <button
         id="mobile-menu-button"
-        class="md:hidden w-10 h-10 flex items-center justify-center text-gray-600 focus:outline-none rounded-full hover:bg-gray-50 transition-colors duration-300"
+        class={styles.k7l8}
         aria-label="Toggle menu"
       >
-        <div class="relative w-5 h-4">
-          <span
-            id="line-1"
-            class="absolute top-0 left-0 w-full h-0.5 bg-gray-600 rounded-full transform transition-all duration-300 ease-in-out"
-          ></span>
-          <span
-            id="line-2"
-            class="absolute top-1/2 -translate-y-1/2 left-0 w-full h-0.5 bg-gray-600 rounded-full transform transition-all duration-300 ease-in-out"
-          ></span>
-          <span
-            id="line-3"
-            class="absolute bottom-0 left-0 w-full h-0.5 bg-gray-600 rounded-full transform transition-all duration-300 ease-in-out"
-          ></span>
+        <div class={styles.m9n0}>
+          <span id="line-1" class={styles.o1p2}></span>
+          <span id="line-2" class={styles.q3r4}></span>
+          <span id="line-3" class={styles.s5t6}></span>
         </div>
       </button>
     </div>
   </div>
 
   <!-- Enhanced mobile navigation overlay with smoother transitions -->
-  <div
-    id="mobile-menu"
-    class="fixed inset-0 bg-white/95 backdrop-blur-xl z-50 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-500 ease-in-out"
-  >
-    <nav
-      class="text-center transform translate-y-8 transition-transform duration-500 ease-out"
-    >
-      <ul class="flex flex-col space-y-7">
+  <div id="mobile-menu" class={styles.u7v8}>
+    <nav class={styles.w9x0}>
+      <ul class={styles.y1z2}>
         {
           navItems.map((item, index) => (
-            <li class="overflow-hidden">
+            <li class={styles.a3b4}>
               <a
                 href={item.url}
-                class="text-xl font-light text-gray-800 hover:text-blue-600 transition-all duration-300 flex items-center justify-center gap-3 opacity-0 mobile-link"
+                class={styles.c5d6}
                 data-mobile-link
                 data-index={index}
               >
-                <i class={`fas fa-${item.icon} text-blue-500/70`} />
+                <i class={`fas fa-${item.icon} ${styles.e7f8}`} />
                 {item.name}
               </a>
             </li>
@@ -126,17 +103,17 @@ const currentPath = Astro.url.pathname;
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const mobileMenuButton = document.getElementById("mobile-menu-button");
-
     const mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
     const line1 = document.getElementById("line-1") as HTMLElement;
     const line2 = document.getElementById("line-2") as HTMLElement;
     const line3 = document.getElementById("line-3") as HTMLElement;
     const mobileLinks = document.querySelectorAll(
-      "[data-mobile-link]",
+      "[data-mobile-link]"
     ) as NodeListOf<HTMLElement>;
     const navContainer = document.querySelector(
-      "#mobile-menu nav",
+      "#mobile-menu nav"
     ) as HTMLElement;
+    const header = document.getElementById("main-header") as HTMLElement;
 
     let isOpen = false;
 
@@ -165,7 +142,7 @@ const currentPath = Astro.url.pathname;
                 link.style.opacity = "1";
                 link.style.transform = "translateY(0)";
               },
-              100 + index * 50,
+              100 + index * 50
             );
           });
         } else {
@@ -184,7 +161,7 @@ const currentPath = Astro.url.pathname;
               mobileMenu.style.pointerEvents = "none";
               navContainer.style.transform = "translateY(8px)";
             },
-            mobileLinks.length * 30 + 100,
+            mobileLinks.length * 30 + 100
           );
         }
 
@@ -217,18 +194,19 @@ const currentPath = Astro.url.pathname;
     }
 
     // Enhanced header scroll effect with smoother transitions
-    const header = document.querySelector("header") as HTMLElement;
     if (header) {
       let lastScrollY = window.scrollY;
       let ticking = false;
 
       const updateHeader = () => {
         if (window.scrollY > 50) {
-          header.classList.add("py-3", "shadow-md");
-          header.classList.remove("py-5");
+          header.style.paddingTop = "0.5rem";
+          header.style.paddingBottom = "0.5rem";
+          header.style.boxShadow = "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)";
         } else {
-          header.classList.add("py-5");
-          header.classList.remove("py-3", "shadow-md");
+          header.style.paddingTop = "0.75rem";
+          header.style.paddingBottom = "0.75rem";
+          header.style.boxShadow = "none";
         }
 
         ticking = false;
@@ -249,23 +227,3 @@ const currentPath = Astro.url.pathname;
     }
   });
 </script>
-<style>
-  /* Enhanced smooth transitions */
-  header {
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  /* Improved animations for hamburger menu */
-  #line-1,
-  #line-2,
-  #line-3 {
-    transform-origin: center;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  /* Initial state for mobile links */
-  .mobile-link {
-    transform: translateY(20px);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-</style>
