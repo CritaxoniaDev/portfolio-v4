@@ -44,8 +44,6 @@ import styles from "../styles/Welcome.module.css";
           <h1 class={styles.p6c9}>
             Gian Raphael Alcantara
           </h1>
-          <!-- Lottie animation container -->
-          <div id="lottie-rocket" class={styles.q2d5}></div>
         </div>
         <div class={styles.r8e7}>
           <!-- Fixed height container to prevent layout shift -->
@@ -89,7 +87,6 @@ import styles from "../styles/Welcome.module.css";
     </div>
   </div>
 </div>
-
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -154,9 +151,6 @@ import styles from "../styles/Welcome.module.css";
     // Start the typewriter effect
     typeWriter();
     
-    // Initialize Lottie animation
-    loadLottieAnimation();
-    
     // Add resize handler for responsive adjustments
     window.addEventListener('resize', handleResize);
     handleResize(); // Call once on load
@@ -164,61 +158,19 @@ import styles from "../styles/Welcome.module.css";
   
   // Function to handle responsive adjustments
   function handleResize() {
-  const isMobile = window.innerWidth < 640;
-  const isTablet = window.innerWidth >= 640 && window.innerWidth < 1024;
-  const typewriterElement = document.getElementById("typewriter");
-  
-  if (typewriterElement) {
-    // Adjust font size based on screen size
-    if (isMobile) {
-      typewriterElement.style.fontSize = '1rem';
-    } else if (isTablet) {
-      typewriterElement.style.fontSize = '1.125rem';
-    } else {
-      typewriterElement.style.fontSize = '1.25rem';
+    const isMobile = window.innerWidth < 640;
+    const isTablet = window.innerWidth >= 640 && window.innerWidth < 1024;
+    const typewriterElement = document.getElementById("typewriter");
+    
+    if (typewriterElement) {
+      // Adjust font size based on screen size
+      if (isMobile) {
+        typewriterElement.style.fontSize = '1rem';
+      } else if (isTablet) {
+        typewriterElement.style.fontSize = '1.125rem';
+      } else {
+        typewriterElement.style.fontSize = '1.5rem';
+      }
     }
   }
-  
-  // Adjust lottie animation size if needed
-  const lottieElement = document.getElementById('lottie-rocket');
-  if (lottieElement) {
-    if (isMobile) {
-      lottieElement.style.transform = 'scale(0.8)';
-    } else if (isTablet) {
-      lottieElement.style.transform = 'scale(0.9)';
-    } else {
-      lottieElement.style.transform = 'scale(1)';
-    }
-  }
-}
-
-// Function to load the Lottie animation
-function loadLottieAnimation() {
-  // Check if lottie-web is loaded
-  if (typeof window !== 'undefined' && 'lottie' in window) {
-    // Load the animation with updated path
-    window.lottie.loadAnimation({
-      container: document.getElementById('lottie-rocket'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/rocket-animation.json' // Updated path to the public directory
-    });
-  } else {
-    // If lottie-web is not loaded, load it dynamically
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js';
-    script.onload = function() {
-      // Once loaded, initialize the animation with updated path
-      window.lottie.loadAnimation({
-        container: document.getElementById('lottie-rocket'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: '/rocket-animation.json' // Updated path to the public directory
-      });
-    };
-    document.head.appendChild(script);
-  }
-}
 </script>
