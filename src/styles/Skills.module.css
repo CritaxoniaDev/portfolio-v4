@@ -1,0 +1,342 @@
+/* Main section container */
+.a1b2 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background-color: white;
+  }
+  
+  /* Container */
+  .c3d4 {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  /* Inner container with max width */
+  .e5f6 {
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Section heading container */
+  .g7h8 {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+  
+  /* Section subtitle */
+  .i9j0 {
+    color: #2563eb;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  /* Section title */
+  .k1l2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 0.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .k1l2 {
+      font-size: 2.25rem;
+    }
+  }
+  
+  /* Animated underline */
+  .m3n4 {
+    height: 0.25rem;
+    width: 3rem;
+    background-color: #3b82f6;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    border-radius: 9999px;
+  }
+  
+  /* Skills categories container */
+  .o5p6 {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  
+  /* Skill category container */
+  .q7r8 {
+    position: relative;
+  }
+  
+  /* Category heading container */
+  .s9t0 {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  /* Category title with accent */
+  .u1v2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Vertical bar accent */
+  .w3x4 {
+    height: 1.25rem;
+    width: 0.25rem;
+    background-color: #3b82f6;
+    border-radius: 9999px;
+    margin-right: 0.75rem;
+  }
+  
+  /* Gradient divider line */
+  .y5z6 {
+    height: 1px;
+    width: 100%;
+    background-image: linear-gradient(to right, #dbeafe, #93c5fd, transparent);
+  }
+  
+  /* Decorative element - right side */
+  .a7b8 {
+    position: absolute;
+    bottom: -0.75rem;
+    right: -0.5rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: #3b82f6;
+    border-radius: 0 0.5rem 0 0.5rem;
+    z-index: 0;
+    transform: rotate(12deg);
+    opacity: 0.1;
+  }
+  
+  /* Decorative element - left side */
+  .c9d0 {
+    position: absolute;
+    bottom: -0.75rem;
+    left: -0.5rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: #3b82f6;
+    border-radius: 0.5rem 0 0.5rem 0;
+    z-index: 0;
+    transform: rotate(12deg);
+    opacity: 0.1;
+  }
+  
+  /* Skills grid */
+  .e1f2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+  
+  @media (min-width: 640px) {
+    .e1f2 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .e1f2 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .e1f2 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+  
+  /* Skill item container */
+  .g3h4 {
+    position: relative;
+  }
+  
+  /* Skill card with 3D effect */
+  .i5j6 {
+    position: relative;
+    z-index: 10;
+    transform: translateY(0) rotate(0);
+    transition: all 0.3s;
+  }
+  
+  .i5j6:hover {
+    transform: translateY(-0.5rem) rotate(1deg);
+  }
+  
+  /* Skill card styling */
+  .k7l8 {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  
+  /* Icon container */
+  .m9n0 {
+    font-size: 1.875rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+  }
+  
+  .i5j6:hover .m9n0 {
+    opacity: 1;
+  }
+  
+  /* Skill name */
+  .o1p2 {
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  /* Glow effect on hover */
+  .q3r4 {
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  }
+  
+  .i5j6:hover .q3r4 {
+    opacity: 1;
+  }
+  
+  /* Inner border glow effect */
+  .s5t6 {
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem;
+    border: 1px solid #bfdbfe;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .i5j6:hover .s5t6 {
+    opacity: 0.5;
+  }
+  
+  /* Layered decorative element */
+  .u7v8 {
+    position: absolute;
+    bottom: -0.25rem;
+    right: -0.25rem;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #bfdbfe;
+    border-radius: 0.5rem;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .g3h4:hover .u7v8 {
+    opacity: 0.3;
+  }
+  
+  /* Floating dot */
+  .w9x0 {
+    position: absolute;
+    top: -0.25rem;
+    right: -0.25rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background-color: #bfdbfe;
+    opacity: 0.4;
+  }
+  
+  /* Skill level indicator container */
+  .y1z2 {
+    margin-top: 5rem;
+    position: relative;
+  }
+  
+  /* Indicator card */
+  .a3b4 {
+    position: relative;
+    z-index: 10;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    text-align: center;
+  }
+  
+  /* Indicator text */
+  .c5d6 {
+    color: #6b7280;
+    font-size: 0.875rem;
+    font-style: italic;
+  }
+  
+  /* Animated progress bar */
+  .e7f8 {
+    height: 0.25rem;
+    background-image: linear-gradient(to right, #93c5fd, #3b82f6, #93c5fd);
+    max-width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.75rem;
+    border-radius: 9999px;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Layered decorative element for indicator */
+  .g9h0 {
+    position: absolute;
+    bottom: -0.5rem;
+    right: -0.5rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #dbeafe;
+    border-radius: 0.5rem;
+    z-index: 0;
+    background-image: linear-gradient(to bottom right, #eff6ff, transparent);
+    opacity: 0.5;
+  }
+  
+  /* Corner accent for indicator */
+  .i1j2 {
+    position: absolute;
+    bottom: -0.25rem;
+    right: -0.25rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: #3b82f6;
+    border-radius: 0 0.5rem 0 0.5rem;
+    z-index: 0;
+    transform: rotate(12deg);
+    opacity: 0.1;
+  }
+  
