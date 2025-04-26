@@ -7,6 +7,9 @@ import mealsOnWheelsImage from '../assets/projects/project-6.png';
 import minstrelMuseImage from '../assets/projects/minstrel-muse.png';
 import cmaImage from '../assets/projects/CMA.png';
 
+// Import CSS module
+import styles from '../styles/Projects.module.css';
+
 // Project data with enhanced descriptions and details
 const projects = [
   {
@@ -75,68 +78,67 @@ const projects = [
 ];
 ---
 
-<section id="projects" class="py-32 bg-white">
-  <div class="container mx-auto px-6">
-    <div class="max-w-6xl mx-auto">
+<section id="projects" class={styles.p1q2}>
+  <div class={styles.r3s4}>
+    <div class={styles.t5u6}>
       <!-- Section heading with animated underline -->
-      <div class="mb-16 text-center">
-        <span class="text-blue-600 text-sm font-medium uppercase tracking-wider">Showcase</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Projects</h2>
-        <div class="h-1 w-12 bg-blue-500 mx-auto mt-4 rounded-full"></div>
-        <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Explore my portfolio of innovative solutions across various domains, showcasing my technical versatility and problem-solving approach.</p>
+      <div class={styles.v7w8}>
+        <span class={styles.x9y0}>Showcase</span>
+        <h2 class={styles.z1a2}>Projects</h2>
+        <div class={styles.b3c4}></div>
+        <p class={styles.d5e6}>Explore my portfolio of innovative solutions across various domains, showcasing my technical versatility and problem-solving approach.</p>
       </div>
       
       <!-- Projects grid with enhanced 3D cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div class={styles.f7g8}>
         {projects.map((project, index) => (
-          <div class="relative group">
-            <!-- Main project card with enhanced 3D effect similar to Education.astro -->
-            <div class="relative z-10 transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-1 h-full">
-              <div class="bg-white rounded-lg shadow-xl relative flex flex-col h-full overflow-hidden"
-                   style="box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.05) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;">
+          <div class={styles.h9i0}>
+            <!-- Main project card with enhanced 3D effect -->
+            <div class={styles.j1k2}>
+              <div class={styles.l3m4}>
                 
                 <!-- Project image with floating effect -->
-                <div class="relative h-48 overflow-hidden">
+                <div class={styles.n5o6}>
                   <img 
                     src={project.image.src} 
                     alt={project.title}
-                    class="w-full h-full object-cover object-center transform transition-transform duration-500 group-hover:scale-110"
+                    class={styles.p7q8}
                   />
                   
                   <!-- Overlay gradient for better text visibility -->
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div class={styles.r9s0}></div>
                   
                   <!-- Floating technology badge - highlight feature -->
-                  <div class="absolute top-3 right-3">
-                    <span class="px-3 py-1 bg-blue-500 text-white text-xs rounded-full font-medium shadow-lg">
+                  <div class={styles.t1u2}>
+                    <span class={styles.v3w4}>
                       {project.highlight}
                     </span>
                   </div>
                   
                   <!-- Project title overlay on image - appears on hover -->
-                  <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none">
-                    <h3 class="text-white font-semibold text-lg">{project.title}</h3>
+                  <div class={styles.x5y6}>
+                    <h3 class={styles.z7a8}>{project.title}</h3>
                   </div>
                 </div>
                 
                 <!-- Project content with enhanced styling -->
-                <div class="p-6 flex flex-col flex-grow">
+                <div class={styles.b9c0}>
                   <!-- Only show title in the body when not hovering -->
-                  <h3 class="text-xl font-semibold text-gray-900 mb-2 group-hover:opacity-0 transition-opacity duration-300">{project.title}</h3>
+                  <h3 class={styles.d1e2}>{project.title}</h3>
                   
-                  <p class="text-gray-600 text-sm mb-4 flex-grow">{project.description}</p>
+                  <p class={styles.f3g4}>{project.description}</p>
                   
                   <!-- Technologies with improved styling -->
-                  <div class="mb-4">
-                    <h4 class="text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">Technologies</h4>
-                    <div class="flex flex-wrap gap-2">
+                  <div class={styles.h5i6}>
+                    <h4 class={styles.j7k8}>Technologies</h4>
+                    <div class={styles.l9m0}>
                       {project.technologies.slice(0, 4).map(tech => (
-                        <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-100 hover:bg-blue-100 transition-colors duration-300">
+                        <span class={styles.n1o2}>
                           {tech}
                         </span>
                       ))}
                       {project.technologies.length > 4 && (
-                        <span class="px-2 py-1 bg-gray-50 text-gray-700 text-xs rounded-full border border-gray-100 hover:bg-gray-100 transition-colors duration-300">
+                        <span class={styles.p3q4}>
                           +{project.technologies.length - 4} more
                         </span>
                       )}
@@ -144,15 +146,15 @@ const projects = [
                   </div>
                   
                   <!-- Link with enhanced styling and improved clickability -->
-                  <div class="relative z-20">
+                  <div class={styles.r5s6}>
                     <a 
                       href={project.githubLink} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors duration-300 cursor-pointer"
+                      class={styles.t7u8}
                     >
                       View Project
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" class={styles.v9w0} viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H3a1 1 0 110-2h9.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                       </svg>
                     </a>
@@ -160,57 +162,49 @@ const projects = [
                 </div>
                 
                 <!-- Pulsing dot indicator -->
-                <div class="absolute top-3 left-3 flex items-center">
-                  <span class="h-2 w-2 bg-green-500 rounded-full mr-1 animate-pulse"></span>
-                  <span class="text-xs text-white font-medium bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">Live Project</span>
+                <div class={styles.x1y2}>
+                  <span class={styles.z3a4}></span>
+                  <span class={styles.b5c6}>Live Project</span>
                 </div>
               </div>
               <!-- Inner border glow effect -->
-              <div class="absolute inset-0 rounded-lg border-2 border-blue-400 opacity-0 group-hover:opacity-30 transition-opacity duration-300 shadow-[0_0_15px_rgba(59,130,246,0.3)] pointer-events-none">
-              </div>
+              <div class={styles.d7e8}></div>
             </div>
             
-            <!-- Layered decorative elements for 3D effect - similar to Education.astro -->
-            <div class="absolute -bottom-3 -right-3 w-full h-full border-2 border-blue-500 rounded-lg z-0 bg-gradient-to-br from-blue-50 to-transparent opacity-30 pointer-events-none">
-            </div>
-            <div class="absolute -bottom-5 -right-5 w-full h-full border border-blue-300 rounded-lg opacity-20 pointer-events-none">
-            </div>
+            <!-- Layered decorative elements for 3D effect -->
+            <div class={styles.f9g0}></div>
+            <div class={styles.h1i2}></div>
             
             <!-- Corner accent - alternating sides based on card position -->
-            <div class={`absolute -bottom-2 ${index % 2 === 0 ? '-right-2' : '-left-2'} w-10 h-10 bg-blue-500 ${index % 2 === 0 ? 'rounded-br-lg rounded-tl-lg' : 'rounded-bl-lg rounded-tr-lg'} z-0 transform ${index % 2 === 0 ? 'rotate-12' : 'rotate-12'} opacity-80 pointer-events-none`}>
-            </div>
+            <div class={index % 2 === 0 ? styles.j3k4 : styles.l5m6}></div>
             
             <!-- Subtle floating dots for dimension - alternating sides -->
-            <div class={`absolute -top-4 ${index % 2 === 0 ? '-right-4' : '-left-4'} w-6 h-6 rounded-full bg-blue-100 opacity-70 pointer-events-none`}>
-            </div>
-            <div class={`absolute top-20 ${index % 2 === 0 ? '-right-6' : '-left-6'} w-3 h-3 rounded-full bg-blue-300 opacity-50 pointer-events-none`}>
-            </div>
+            <div class={index % 2 === 0 ? styles.n7o8 : styles.p9q0}></div>
+            <div class={index % 2 === 0 ? styles.r1s2 : styles.t3u4}></div>
           </div>
         ))}
       </div>
       
       <!-- View more projects link with enhanced styling -->
-      <div class="mt-16 text-center relative">
-        <div class="relative z-10 transform transition-transform duration-300 hover:-translate-y-1 inline-block">
+      <div class={styles.v5w6}>
+        <div class={styles.x7y8}>
           <a 
             href="https://github.com/CritaxoniaDev" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="inline-flex items-center px-8 py-3 bg-transparent border-b-2 border-blue-500 text-gray-800 hover:bg-blue-50 transition-all duration-300 font-medium group"
+            class={styles.z9a0}
           >
             View More on GitHub
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class={styles.b1c2} viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H3a1 1 0 110-2h9.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
           </a>
           <!-- Inner border glow effect -->
-          <div class="absolute inset-0 border-2 border-blue-400 opacity-0 hover:opacity-30 transition-opacity duration-300 shadow-[0_0_15px_rgba(59,130,246,0.3)] pointer-events-none">
-          </div>
+          <div class={styles.d3e4}></div>
         </div>
         
         <!-- Decorative elements for the button -->
-        <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-blue-500 rounded-br-lg rounded-tl-lg z-0 transform rotate-12 opacity-10 left-1/2 ml-16 pointer-events-none">
-        </div>
+        <div class={styles.f5g6}></div>
       </div>
     </div>
   </div>
