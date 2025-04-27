@@ -18,10 +18,20 @@ import {
     FaCat,
     FaPencilRuler,
     FaFigma,
+    FaMicrosoft,
 } from "react-icons/fa";
 import { SiNextdotjs, SiFirebase } from "react-icons/si";
 // Import CSS module
 import styles from "../styles/Skills.module.css";
+
+// Define SVG strings for Microsoft products
+const powerAppsSvg = `<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21.333 4.667v14.666c0 1.105-.895 2-2 2H4.667c-1.105 0-2-.895-2-2V4.667c0-1.105.895-2 2-2h14.666c1.105 0 2 .895 2 2zm-5.333 7.333c0-2.577-2.089-4.667-4.667-4.667S6.667 9.423 6.667 12s2.089 4.667 4.667 4.667 4.666-2.09 4.666-4.667zm-4.667-2.667c-1.473 0-2.666 1.194-2.666 2.667s1.193 2.667 2.666 2.667c1.473 0 2.667-1.194 2.667-2.667S12.806 9.333 11.333 9.333z" /></svg>`;
+
+const powerAutomateSvg = `<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm1-13h-2v6h-3l4 4 4-4h-3V7z" /></svg>`;
+
+const dataverseSvg = `<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20 3H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM4 19V5h16l.002 14H4zM6 7h12v2H6V7zm0 4h12v2H6v-2zm0 4h6v2H6v-2z" /></svg>`;
+
+const copilotStudioSvg = `<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1 16v-5H7l5-7v5h4l-5 7z" /></svg>`;
 
 const skills = [
     {
@@ -110,6 +120,35 @@ const skills = [
         category: "uiux",
         color: "text-purple-500",
     },
+    // Add Microsoft products
+    {
+        name: "Power Apps",
+        icon: "microsoft",
+        svgContent: powerAppsSvg,
+        category: "microsoft",
+        color: "text-purple-600",
+    },
+    {
+        name: "Power Automate",
+        icon: "microsoft",
+        svgContent: powerAutomateSvg,
+        category: "microsoft",
+        color: "text-blue-500",
+    },
+    {
+        name: "Dataverse",
+        icon: "microsoft",
+        svgContent: dataverseSvg,
+        category: "microsoft",
+        color: "text-green-600",
+    },
+    {
+        name: "Copilot Studio",
+        icon: "microsoft",
+        svgContent: copilotStudioSvg,
+        category: "microsoft",
+        color: "text-indigo-500",
+    },
 ];
 
 // Group skills by category
@@ -125,6 +164,10 @@ const categories = {
     uiux: {
         title: "UI/UX Design",
         skills: skills.filter((skill) => skill.category === "uiux"),
+    },
+    microsoft: {
+        title: "Microsoft Power Platform",
+        skills: skills.filter((skill) => skill.category === "microsoft"),
     },
 };
 ---
@@ -164,7 +207,11 @@ const categories = {
             <div class={styles.i5j6}>
                 <div class={styles.k7l8}>
                     <div class={`${styles.m9n0} ${skill.color}`}>
-                        <skill.icon />
+                        {skill.icon === "microsoft" ? (
+                            <Fragment set:html={skill.svgContent} />
+                        ) : (
+                            <skill.icon />
+                        )}
                     </div>
                     <span class={styles.o1p2}>
                         {skill.name}

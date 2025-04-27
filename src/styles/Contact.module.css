@@ -15,7 +15,7 @@
 
 /* Inner container with max width */
 .g5h6 {
-    max-width: 64rem;
+    max-width: 56rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -78,20 +78,13 @@
 
 @media (min-width: 1024px) {
     .s7t8 {
-        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-columns: 7fr 5fr;
     }
 }
 
-/* Left column - Contact form */
+/* Left side: Contact form container */
 .u9v0 {
-    display: flex;
-    flex-direction: column;
-}
-
-@media (min-width: 1024px) {
-    .u9v0 {
-        grid-column: span 7 / span 7;
-    }
+    position: relative;
 }
 
 /* Form container */
@@ -99,7 +92,7 @@
     position: relative;
 }
 
-/* Layered decorative elements */
+/* Layered decorative element 1 */
 .y3z4 {
     position: absolute;
     bottom: -0.75rem;
@@ -109,9 +102,11 @@
     border: 2px solid #3b82f6;
     border-radius: 0.5rem;
     background-image: linear-gradient(to bottom right, rgba(239, 246, 255, 0.7), transparent);
+    opacity: 0.3;
     pointer-events: none;
 }
 
+/* Layered decorative element 2 */
 .a5b6 {
     position: absolute;
     bottom: -1.25rem;
@@ -138,7 +133,7 @@
     pointer-events: none;
 }
 
-/* Floating dots */
+/* Floating dot 1 */
 .e9f0 {
     position: absolute;
     top: -1rem;
@@ -151,6 +146,7 @@
     pointer-events: none;
 }
 
+/* Floating dot 2 */
 .g1h2 {
     position: absolute;
     top: 5rem;
@@ -167,15 +163,15 @@
 .i3j4 {
     position: relative;
     z-index: 10;
-    transform: translateY(0);
+    transform: translateY(0) rotate(0);
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .i3j4:hover {
-    transform: translateY(-0.25rem);
+    transform: translateY(-0.5rem) rotate(1deg);
 }
 
-/* Card styling */
+/* Card content */
 .k5l6 {
     background-color: white;
     padding: 2rem;
@@ -194,14 +190,14 @@
     margin-bottom: 1.5rem;
 }
 
-/* Form container */
+/* Contact form */
 .o9p0 {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-/* Form group */
+/* Form field container */
 .q1r2 {
     display: flex;
     flex-direction: column;
@@ -227,8 +223,8 @@
 
 .u5v6:focus {
     outline: none;
-    border-color: #60a5fa;
-    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
 }
 
 /* Form textarea */
@@ -243,8 +239,8 @@
 
 .w7x8:focus {
     outline: none;
-    border-color: #60a5fa;
-    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
 }
 
 /* Submit button */
@@ -262,8 +258,8 @@
 
 .y9z0:hover {
     background-color: #1d4ed8;
-    transform: translateY(-0.125rem);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transform: translateY(-0.25rem);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 /* Card inner glow effect */
@@ -272,24 +268,22 @@
     inset: 0;
     border-radius: 0.5rem;
     border: 2px solid #60a5fa;
-    opacity: 0.3;
+    opacity: 0;
+    transition: opacity 0.3s ease;
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
     pointer-events: none;
 }
 
-/* Right column - Contact info */
+.i3j4:hover .a1b2 {
+    opacity: 0.3;
+}
+
+/* Right side: Contact info container */
 .c3d4 {
-    display: flex;
-    flex-direction: column;
+    position: relative;
 }
 
-@media (min-width: 1024px) {
-    .c3d4 {
-        grid-column: span 5 / span 5;
-    }
-}
-
-/* Contact info cards container */
+/* Contact info inner container */
 .e5f6 {
     display: flex;
     flex-direction: column;
@@ -301,7 +295,7 @@
     position: relative;
 }
 
-/* Layered decorative elements for info card */
+/* Contact info layered decorative element 1 */
 .i9j0 {
     position: absolute;
     bottom: -0.75rem;
@@ -311,9 +305,11 @@
     border: 2px solid #3b82f6;
     border-radius: 0.5rem;
     background-image: linear-gradient(to bottom right, rgba(239, 246, 255, 0.7), transparent);
+    opacity: 0.3;
     pointer-events: none;
 }
 
+/* Contact info layered decorative element 2 */
 .k1l2 {
     position: absolute;
     bottom: -1.25rem;
@@ -326,7 +322,7 @@
     pointer-events: none;
 }
 
-/* Corner accent for info card */
+/* Contact info corner accent */
 .m3n4 {
     position: absolute;
     bottom: -0.5rem;
@@ -334,13 +330,13 @@
     width: 2.5rem;
     height: 2.5rem;
     background-color: #3b82f6;
-    border-radius: 0 0.5rem 0 0;
+    border-radius: 0.5rem 0 0.5rem 0;
     transform: rotate(12deg);
     opacity: 0.8;
     pointer-events: none;
 }
 
-/* Info card with 3D effect */
+/* Contact info main card */
 .o5p6 {
     position: relative;
     z-index: 10;
@@ -352,7 +348,7 @@
     transform: translateY(-0.5rem) rotate(1deg);
 }
 
-/* Info card styling */
+/* Contact info card content */
 .q7r8 {
     background-color: white;
     padding: 2rem;
@@ -363,7 +359,7 @@
     position: relative;
 }
 
-/* Info card heading */
+/* Contact info heading */
 .s9t0 {
     font-size: 1.25rem;
     font-weight: 600;
@@ -384,7 +380,7 @@
     align-items: flex-start;
 }
 
-/* Icon container */
+/* Contact icon container */
 .y5z6 {
     width: 2.5rem;
     height: 2.5rem;
@@ -398,18 +394,17 @@
     flex-shrink: 0;
 }
 
-/* Icon */
+/* Contact icon */
 .a7b8 {
     font-size: 1.125rem;
 }
 
-/* Contact detail text container */
+/* Contact text container */
 .c9d0 {
-    display: flex;
-    flex-direction: column;
+    flex-grow: 1;
 }
 
-/* Contact detail label */
+/* Contact label */
 .e1f2 {
     font-size: 0.875rem;
     font-weight: 500;
@@ -417,7 +412,7 @@
     margin-bottom: 0.25rem;
 }
 
-/* Contact detail value */
+/* Contact value link */
 .g3h4 {
     color: #111827;
     transition: color 0.3s ease;
@@ -427,20 +422,25 @@
     color: #2563eb;
 }
 
-/* Contact detail text */
+/* Contact value text */
 .i5j6 {
     color: #111827;
 }
 
-/* Card inner glow effect */
+/* Contact info card inner glow */
 .k7l8 {
     position: absolute;
     inset: 0;
     border-radius: 0.5rem;
     border: 2px solid #60a5fa;
-    opacity: 0.3;
+    opacity: 0;
+    transition: opacity 0.3s ease;
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
     pointer-events: none;
+}
+
+.o5p6:hover .k7l8 {
+    opacity: 0.3;
 }
 
 /* Social links card container */
@@ -448,7 +448,7 @@
     position: relative;
 }
 
-/* Layered decorative elements for social card */
+/* Social links layered decorative element 1 */
 .o1p2 {
     position: absolute;
     bottom: -0.75rem;
@@ -458,9 +458,11 @@
     border: 2px solid #3b82f6;
     border-radius: 0.5rem;
     background-image: linear-gradient(to bottom right, rgba(239, 246, 255, 0.7), transparent);
+    opacity: 0.3;
     pointer-events: none;
 }
 
+/* Social links layered decorative element 2 */
 .q3r4 {
     position: absolute;
     bottom: -1.25rem;
@@ -473,7 +475,7 @@
     pointer-events: none;
 }
 
-/* Corner accent for social card */
+/* Social links corner accent */
 .s5t6 {
     position: absolute;
     bottom: -0.5rem;
@@ -481,13 +483,13 @@
     width: 2.5rem;
     height: 2.5rem;
     background-color: #3b82f6;
-    border-radius: 0.5rem 0 0 0;
+    border-radius: 0 0 0 0.5rem;
     transform: rotate(12deg);
     opacity: 0.8;
     pointer-events: none;
 }
 
-/* Floating dots for social card */
+/* Social links floating dot 1 */
 .u7v8 {
     position: absolute;
     top: -1rem;
@@ -500,6 +502,7 @@
     pointer-events: none;
 }
 
+/* Social links floating dot 2 */
 .w9x0 {
     position: absolute;
     top: 5rem;
@@ -512,7 +515,7 @@
     pointer-events: none;
 }
 
-/* Social card with 3D effect */
+/* Social links main card */
 .y1z2 {
     position: relative;
     z-index: 10;
@@ -524,7 +527,7 @@
     transform: translateY(-0.5rem) rotate(1deg);
 }
 
-/* Social card styling */
+/* Social links card content */
 .a3b4 {
     background-color: white;
     padding: 2rem;
@@ -535,7 +538,7 @@
     position: relative;
 }
 
-/* Social card heading */
+/* Social links heading */
 .c5d6 {
     font-size: 1.25rem;
     font-weight: 600;
@@ -549,7 +552,7 @@
     gap: 1rem;
 }
 
-/* Social link */
+/* Social link item */
 .g9h0 {
     width: 3rem;
     height: 3rem;
@@ -558,8 +561,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #374151;
+    color: #4b5563;
     transition: all 0.3s ease;
+    transform: scale(1);
 }
 
 .g9h0:hover {
@@ -573,15 +577,20 @@
     font-size: 1.25rem;
 }
 
-/* Card inner glow effect */
+/* Social links card inner glow */
 .k3l4 {
     position: absolute;
     inset: 0;
     border-radius: 0.5rem;
     border: 2px solid #60a5fa;
-    opacity: 0.3;
+    opacity: 0;
+    transition: opacity 0.3s ease;
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
     pointer-events: none;
+}
+
+.y1z2:hover .k3l4 {
+    opacity: 0.3;
 }
 
 /* Success message container */
@@ -590,11 +599,12 @@
     display: none;
 }
 
-.m5n6.o7p8 {
+/* Success message visible class */
+.o7p8 {
     display: block;
 }
 
-/* Success message card container */
+/* Success message inner container */
 .q9r0 {
     position: relative;
 }
@@ -605,13 +615,13 @@
     z-index: 10;
 }
 
-/* Success message card styling */
+/* Success message content */
 .u3v4 {
-    background-color: #ecfdf5;
+    background-color: #f0fdf4;
     padding: 1.5rem;
     border-radius: 0.5rem;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    border: 1px solid #d1fae5;
+    border: 1px solid #bbf7d0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     text-align: center;
 }
 
@@ -619,12 +629,12 @@
 .w5x6 {
     width: 4rem;
     height: 4rem;
-    background-color: #d1fae5;
+    background-color: #dcfce7;
     border-radius: 9999px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #10b981;
+    color: #16a34a;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1rem;
@@ -632,13 +642,13 @@
 
 /* Success icon */
 .y7z8 {
-    height: 2rem;
     width: 2rem;
+    height: 2rem;
 }
 
 /* Success message heading */
 .a9b0 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #111827;
     margin-bottom: 0.5rem;
@@ -654,17 +664,16 @@
     position: absolute;
     inset: 0;
     border-radius: 0.5rem;
-    border: 2px solid #34d399;
+    border: 2px solid #4ade80;
     opacity: 0.3;
-    box-shadow: 0 0 15px rgba(52, 211, 153, 0.3);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.3);
     pointer-events: none;
 }
 
-/* Focus styles for form elements */
+/* Focus state for form inputs */
 .g5h6 {
-    outline: none;
-    border-color: #60a5fa;
-    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
 }
 
 /* Responsive adjustments */
@@ -672,12 +681,6 @@
     .e3f4 {
         padding-left: 2rem;
         padding-right: 2rem;
-    }
-
-    .k5l6,
-    .q7r8,
-    .a3b4 {
-        padding: 2.5rem;
     }
 }
 
@@ -692,19 +695,6 @@
     .g5h6 {
         max-width: 72rem;
     }
-
-    .s7t8 {
-        gap: 3rem;
-    }
-
-    .y5z6 {
-        width: 3rem;
-        height: 3rem;
-    }
-
-    .a7b8 {
-        font-size: 1.25rem;
-    }
 }
 
 @media (min-width: 1280px) {
@@ -718,17 +708,4 @@ a:focus,
 button:focus {
     outline: 2px solid rgba(59, 130, 246, 0.5);
     outline-offset: 2px;
-}
-
-/* Prevent image drag */
-img {
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-/* Smooth transitions */
-* {
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
 }
